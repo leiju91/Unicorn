@@ -1,0 +1,57 @@
+@import "common.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+/* Background */
+
+body {
+  background: url("../../public/img/home.jpg") no-repeat center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Texte */
+
+h1 {
+  font-family: "Nirmala UI";
+  font-size: 110px;
+  color: white;
+}
+
+p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+/* Block */
+
+#accroche {
+  position: absolute;
+  top: 30%;
+  left: 20%; /* à 50%/50% du parent référent */
+}
+
+/* btn */
+
+#btn {
+  position: absolute;
+  left: 20%;
+  top: 60%;
+  border-radius: 0px;
+  font-family: "Roboto";
+  font-size: large;
+}
+
+/* Séparation CSS */
+.barre {
+  position: absolute;
+  height: 400px;
+  width: 4px;
+  left: 55%;
+  top: 27%;
+  background-color: white;
+}

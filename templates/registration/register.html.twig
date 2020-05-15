@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{"user.register"|trans}}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{"user.register"|trans}}</h1>
+    <div class="card">
+        <div class="card-body">
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email, 
+                {'attr': {"class": "form-control", 'placeholder': 'user.email_example'|trans}}) }}
+                {{ form_row(registrationForm.plainPassword, 
+                {'attr': {"class": "form-control", 'placeholder': "user.password"|trans }}) }}
+                {{ form_row(registrationForm.agreeTerms, {label_attr: {class: 'checkbox-custom'}}) }}
+                
+        </div>
+        <div class="card-footer text-right">
+            {{form_row(registrationForm.save)}}
+        </div>
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
+  
+    {# {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }} #}
+{% endblock %}

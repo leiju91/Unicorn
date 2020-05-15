@@ -1,0 +1,13 @@
+user:
+  email: Email
+  email_example: anonyme@gmail.com
+  terms: Conditions d'utilisation
+  password: Mot de passe
+  save: M'enregistrer
+  register: M'inscrire
+  password_message: Veuillez entrez un mot de passe de plus de 6 caractères.
+  terms_message: Veuillez agréer à nos conditions.
+  login: Connexion
+  logout: Déconnexion
+  sign_in: Veuillez vous connecter.
+  connexion: Se connecter

@@ -1,0 +1,13 @@
+user:
+  email: Email
+  email_example: johndoe@gmail.com
+  terms: Terms and conditions
+  password: Password
+  save: Submit
+  register: Register
+  password_message: Please enter a password with more than 6 characters.
+  terms_message: You should agree to our terms.
+  login: Log in!
+  logout: Logout
+  sign_in: Please sign in.
+  connexion: Sign in
