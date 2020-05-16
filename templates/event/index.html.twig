@@ -20,7 +20,7 @@
         {% for event in events %}
             <tr>
                 <td>{{ event.id }}</td>
-                <td>{{ event.title }}</td>
+                <td><a href="{{path("event_show", {"id": event.id})}}"> {{ event.title }}</a></td>
                 <td>{{ event.content }}</td>
                 <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.image }}</td>
