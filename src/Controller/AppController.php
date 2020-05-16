@@ -10,9 +10,19 @@ class AppController extends AbstractController
     /**
      * @Route("/", name="app")
      */
-    public function index()
+    public function home()
     {
-        return $this->render('app/index.html.twig', [
+        return $this->render('app/home.html.twig', [
+            'controller_name' => 'AppController',
+        ]);
+    }
+
+    /**
+     * @Route("/accueil", name="accueil")
+     */
+    public function accueil()
+    {
+        return $this->render('app/accueil.html.twig', [
             'controller_name' => 'AppController',
         ]);
     }
