@@ -1,6 +1,11 @@
 //impoter jquery
 import $ from 'jquery';
 
+import bsCustomFileInput from 'bs-custom-file-input';
+$(document).ready(function () {
+    bsCustomFileInput.init()
+});
+
 require('bootstrap');
 let cache = document.getElementById("cache");
 let cache1 = document.getElementById("cache1");
