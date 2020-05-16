@@ -12,7 +12,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Created_at</th>
-                <th>Featured_image</th>
+                <th>Image</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
                 <td>{{ event.title }}</td>
                 <td>{{ event.content }}</td>
                 <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.featuredImage }}</td>
+                <td>{{ event.image }}</td>
                 <td>
                     <a href="{{ path('event_show', {'id': event.id}) }}">show</a>
                     <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
