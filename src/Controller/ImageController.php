@@ -26,9 +26,7 @@ class ImageController extends AbstractController
     }
 
     /**
-     * Seul ROLE_ADMIN peut accéder à new
      * @Route("/new", name="image_new", methods={"GET","POST"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function new(Request $request): Response
     {
@@ -61,9 +59,7 @@ class ImageController extends AbstractController
     }
 
     /**
-     * * Seul ROLE_ADMIN peut accéder à edit
      * @Route("/{id}/edit", name="image_edit", methods={"GET","POST"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function edit(Request $request, Image $image): Response
     {
@@ -83,9 +79,7 @@ class ImageController extends AbstractController
     }
 
     /**
-     * * Seul ROLE_ADMIN peut accéder à show
      * @Route("/{id}", name="image_delete", methods={"DELETE"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function delete(Request $request, Image $image): Response
     {
