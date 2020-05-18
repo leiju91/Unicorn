@@ -40,6 +40,7 @@ class EventType extends AbstractType
                         ->orderBy('c.title', 'asc');
                 },
             ])
+            ->add("location")
 
             // Ajout du submit
             ->add('save', SubmitType::class, ['label' => 'save']);
