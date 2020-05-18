@@ -1,46 +1,33 @@
-
 @import "common.scss";
 
-
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    font-family: 'Anton', sans-serif;
-    font-family: 'Roboto', sans-serif;
-
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 10;
-    
-    
-    .navbar-nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+
+  .navbar-nav {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    color:white;
+    color: white;
     .nav-link {
-        padding:20px;
-         
-      
+      padding: 20px;
+      color: white;
     }
-  
-    }
-
-    
-    
+  }
 }
 
 a {
-    //tout mes liens hérite de la couleur du parent
-    color:inherit;
-
+  //tout mes liens hérite de la couleur du parent
+  color: inherit;
 }
 
 @import "/front_end/detail.scss";
-
-
-
