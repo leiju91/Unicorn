@@ -29,9 +29,9 @@ class EventType extends AbstractType
                 'required' => false, // Pas obligatoire
             ])
             ->add('categories', EntityType::class, [
-                'label' => 'article.categories',
+                'label' => 'event.categories',
                 'class' => Category::class,
-                'multiple' => false,
+                'multiple' => true,
                 'expanded' => true,
                 'query_builder' => function (EntityRepository $er) {
                     // Modifie la requête d'affichage de la liste des catégories
