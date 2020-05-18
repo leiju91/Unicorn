@@ -22,6 +22,7 @@ class EventType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('created_at')
+            ->add('location')
             // Inclus le formulaire d'image dans le formulaire article
             ->add('image', ImageType::class, ['label' => false])
             ->add('deleteImage', CheckboxType::class, [
