@@ -1,1 +1,1 @@
-import "../scss/home.scss";
+import "../scss/homede.scss";
