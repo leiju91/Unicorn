@@ -36,14 +36,12 @@ class EventType extends AbstractType
                 'query_builder' => function (EntityRepository $er) {
                     // Modifie la requête d'affichage de la liste des catégories
                     return $er->createQueryBuilder('c')
-                        ->orderBy('c.title', 'asc')
-                    ;
+                        ->orderBy('c.title', 'asc');
                 },
             ])
-            
+
             // Ajout du submit
-            ->add('save', SubmitType::class, ['label' => 'save']); 
-        
+            ->add('save', SubmitType::class, ['label' => 'save']);
     }
 
     public function configureOptions(OptionsResolver $resolver)

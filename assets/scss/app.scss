@@ -1,5 +1,6 @@
-$primary:#050608;
+
 @import "common.scss";
+
 
 *{
     box-sizing: border-box;
@@ -8,4 +9,37 @@ $primary:#050608;
     font-family: 'Roboto', sans-serif;
 
 }
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    
+    
+    .navbar-nav{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    color:white;
+    .nav-link {
+        padding:20px;
+         
+      
+    }
+  
+    }
 
+    
+    
+}
+
+a {
+    //tout mes liens hérite de la couleur du parent
+    color:inherit;
+
+}
+
+@import "/front_end/home.scss";
+@import "/front_end/detail.scss";
+@import "/front_end/event.scss";
