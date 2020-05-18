@@ -16,7 +16,6 @@
         <tbody>
         {% for image in images %}
             <tr>
-                <td>{{ image.id }}</td>
                 <td>{{ image.name }}</td>
                 <td>
                     {% if image is not empty %} {# si img présente affiche là dans tableau#}
