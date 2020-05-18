@@ -28,6 +28,7 @@ class EventType extends AbstractType
                 'label' => 'event.delete_image',
                 'required' => false, // Pas obligatoire
             ])
+            ->add('location')
             ->add('categories', EntityType::class, [
                 'label' => 'event.categories',
                 'class' => Category::class,
