@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('detail') }}
+{% endblock %}
+
+{% block title %}{{ event.title }}{% endblock %}
+{% block body %}
+<div class="container">   
+    <div class="detail">
+        <div class="detail-header">
+            <h1>{{ event.title }}</h1>
+            <div class="metadata" id="date"> {{ event.createdAt|date('H:i') }} </div>
+        </div>        
+        <button type="button" class="btn btn-outline-secondary" id="cat">{{ event.categories[0].title }}</button>
+        <div class="content">
+            <div class="container">
+                <img src="/uploads/{{ event.image.path }}" alt="">
+            </div>            
+            <p> {{ event.content }}</p>              
+        </div>
+        <div class="link">          
+           <a href="">Son</a> 
+           <a href="">Vidéo</a> 
+           <a href="">Achat</a> 
+        </div>
+        <div class="map">
+            <div id="disqus_thread"></div>
+        </div>        
+    </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+{{ encore_entry_script_tags('detail') }}
+<script>
+
+var disqus_config = function () {
+this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = {{ event.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://wild-unicorn.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script id="dsq-count-scr" src="//wild-unicorn.disqus.com/count.js" async></script>
+{% endblock %}
