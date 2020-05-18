@@ -13,7 +13,7 @@
             <h2>{{ event.title |upper}}</h2>
             <div>{{ event.createdAt|date('d/m/Y') }}</div>
             <div>{{ event.createdAt|date('H:i') }}</div>
-            <div class="content">{{ event.content|striptags|slice(0, 20)|raw }}...</div>
+            <div class="content">{{ event.location|striptags|slice(0, 20)|raw }}...</div>
             <a href="{{path('app_register')}}">Détail</a>
         </div>
   

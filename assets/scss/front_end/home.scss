@@ -1,5 +1,6 @@
+@import '../common.scss';
 body {
-  background-color: black;
+  background-color:black;
 }
 
 
@@ -10,14 +11,16 @@ body {
     > div {
       position: absolute;
       bottom:80px;
-      right:15%;
+      right:10%;
       top:5%;
       z-index: 999999;
       background-color: red;
-      max-width: 200px;
+      width: 180px;
+      
+     
+      
       color: white;
       text-align: center;
-      padding-bottom: 20px;
 
       
       > div, 
@@ -54,7 +57,7 @@ body {
     max-height:917px ;
     > div {
 
-      min-width: 100px; 
+      width: 300px;
       z-index: 0;
   }
 }

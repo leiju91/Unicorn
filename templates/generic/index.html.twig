@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Wild Unicorn{% endblock %}</title>
+        {{ encore_entry_link_tags('generic') }}
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class="text-effect">
+        <!-- Select the text in the preview and type in your own -->
+            <h1 class="neon" data-text="WILD UNICORN" contenteditable>WILD UNICORN</h1>
+        <div class="spotlight"></div>
+    </div>
+       
+       
+        {% block body %}{% endblock %}
+   
+        {{ encore_entry_script_tags('generic') }}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
