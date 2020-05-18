@@ -35,24 +35,56 @@ class Event
     private $created_at;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var ?Image
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade="all", orphanRemoval=true)
+     * @ORM\JoinColumn(onDelete="SET NULL")
      */
-    private $featured_image;
+    private $image = null;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="events")
-     * @ORM\JoinColumn(nullable=false)
+     * @var bool
      */
-    private $category;
+    private $deleteImage;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category")
+     */
+    private $categories;
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="events", orphanRemoval=true)
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $location;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDeleteImage()
+    {
+        return $this->deleteImage;
+    }
+
+    public function setDeleteImage(bool $deleteImage)
+    {
+        $this->deleteImage = $deleteImage;
+        if ($deleteImage) {
+            $this->image = null;
+        }
+
+        return $this;
     }
 
     public function getId(): ?int
@@ -96,17 +128,34 @@ class Event
         return $this;
     }
 
-    public function getFeaturedImage(): ?string
+    /**
+     * Get the value of image.
+     *
+     * @return ?Image
+     */
+    public function getImage()
     {
-        return $this->featured_image;
+        return $this->image;
     }
-
-    public function setFeaturedImage(string $featured_image): self
+    
+    /**
+     * Set the value of image.
+     *
+     * @param ?Image $image
+     *
+     * @return self
+     */
+    public function setImage(?Image $image)
     {
-        $this->featured_image = $featured_image;
+        if (empty($image->getFile())) {
+            $image = null;
+        }
+        $this->image = $image;
 
         return $this;
     }
+
+
 
     public function getCategory(): ?Category
     {
@@ -147,6 +196,47 @@ class Event
                 $comment->setEvents(null);
             }
         }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get the value of categories
+     *
+     * @return  ArrayCollection
+     */ 
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Set the value of categories
+     *
+     * @param  ArrayCollection  $categories
+     *
+     * @return  self
+     */ 
+    public function setCategories(ArrayCollection $categories)
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(string $location): self
+    {
+        $this->location = $location;
 
         return $this;
     }

@@ -1,0 +1,95 @@
+body {
+  background-color: black;
+}
+
+
+@media (min-width: 769px){
+  .carousel-item {
+    max-height: 440px;
+    //je m'adresse aux div à l'inerieur de la div je peux faire çà car je suis en scss
+    > div {
+      position: absolute;
+      bottom:80px;
+      right:15%;
+      top:5%;
+      z-index: 999999;
+      background-color: red;
+      max-width: 200px;
+      color: white;
+      text-align: center;
+      padding-bottom: 20px;
+
+      
+      > div, 
+      > h2 {
+          padding:10px;
+          margin: 20px;
+      }
+
+      > div {
+        background-color: black;
+        color:white;
+        
+      }
+
+      a {
+        background-color: white;
+        padding: 5px 10px;
+        color: black;
+        margin: 20px;
+        //de 100% j'enlève 40px
+        width: calc(100% - 40px);
+        transform: translateX(-40px);
+        text-align: right;
+        position: relative;
+        display: block;
+        //ne prends pas le padding en compte
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+@media (min-width: 968px) {   
+  .carousel-item {
+    max-height:917px ;
+    > div {
+
+      min-width: 100px; 
+      z-index: 0;
+  }
+}
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item {
+    color: white;
+    text-align: center;
+    max-height: 440px;
+    overflow: hidden;
+    
+    > div > div {
+      display: none;
+    }
+
+    > div {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      
+    }
+
+    a {
+      background-color: white;
+      padding: 5px 10px;
+      color: black;
+      margin: 20px;
+    }
+  }
+}
+
+
+
+
+
+
