@@ -2,10 +2,11 @@ import('./common');
 
 import '../scss/admin.scss';
 
-var $       = require( 'jquery' );
-var dt      = require( 'datatables.net' )( window, $ );
-var buttons = require( 'datatables.net-buttons' )( window, $ );
+var $ = require( 'jquery' );
+require( 'datatables.net-bs4' )( $ );
+
 
 $(document).ready( function () {
-    $('#event-id').DataTable();
+    console.log("test");
+    $('#event-table').DataTable();
 } );

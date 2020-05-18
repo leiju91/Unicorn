@@ -29,7 +29,8 @@
                 <td>
                     {% if event.image is not empty %} {# si img présente affiche là dans tableau#}
                         <img src="{{ asset(event.image.webPath) }}" style="max-height: 70px"/>
-                    {% endif %}</td>
+                    {% endif %}
+                </td>
                 <td>
                     <a class="btn btn-success" href="{{ path('event_show', {'id': event.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <a class="btn btn-info" href="{{ path('event_edit', {'id': event.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
