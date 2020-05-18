@@ -59,6 +59,11 @@ class Event
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $location;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -220,6 +225,18 @@ class Event
     public function setCategories(ArrayCollection $categories)
     {
         $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(string $location): self
+    {
+        $this->location = $location;
 
         return $this;
     }
