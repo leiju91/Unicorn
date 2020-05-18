@@ -3,17 +3,7 @@ body {
 }
 .carousel-item {
 
-    background-repeat: no-repeat;
-    background-position: center top;
-
-    background-size:cover;
-
-    img {
-      visibility: hidden;
-    }
-  }
-
-@media (min-width: 769px){
+@media (min-width: 769px) {
   .carousel-item {
     max-height: 650px;
     overflow: hidden;
@@ -21,9 +11,9 @@ body {
     //je m'adresse aux div à l'inerieur de la div je peux faire çà car je suis en scss
     > div {
       position: absolute;
-      bottom:80px;
-      right:10%;
-      top:5%;
+      bottom: 80px;
+      right: 15%;
+      top: 5%;
       z-index: 999999;
       background-color: red;
       width: 180px;
@@ -33,17 +23,15 @@ body {
       color: white;
       text-align: center;
 
-      
-      > div, 
+      > div,
       > h2 {
-          padding:10px;
-          margin: 20px;
+        padding: 10px;
+        margin: 20px;
       }
 
       > div {
         background-color: black;
-        color:white;
-        
+        color: white;
       }
 
       a {
@@ -63,15 +51,14 @@ body {
     }
   }
 }
-@media (min-width: 968px) {   
+@media (min-width: 968px) {
   .carousel-item {
-
+    max-height: 917px;
     > div {
-
-      width: 300px;
+      min-width: 100px;
       z-index: 0;
+    }
   }
-}
 }
 
 @media (max-width: 767.98px) {
@@ -80,7 +67,7 @@ body {
     text-align: center;
     max-height: 440px;
     overflow: hidden;
-    
+
     > div > div {
       display: none;
     }
@@ -90,7 +77,6 @@ body {
       bottom: 20px;
       left: 0;
       right: 0;
-      
     }
 
     a {
