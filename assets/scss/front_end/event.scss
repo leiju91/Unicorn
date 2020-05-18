@@ -1,4 +1,22 @@
-@import "common.scss";
-body {
-  background-color: white;
+@import 'common.scss';
+
+.table{
+  margin-top: 50px;
+td{
+  border: 1px black solid !important;
+  background-color: yellow;
+  padding: 20px;
 }
+}
+
+// @media (max-width: 767.98px) {
+//   .container{
+//     margin-top: 100px;
+//   }
+//   table{
+//     border-spacing: 0px;
+//   }
+// }
+
+
+
