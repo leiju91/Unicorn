@@ -1,48 +1,25 @@
-{% extends 'admin_base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Event index{% endblock %}
+{% block stylesheets %}{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
-
-    <table id="event-table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th>Title</th>
-                <th>Categories</th>
-                <th>Content</th>
-                <th>Created_at</th>
-                <th>Image</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container">
         {% for event in events %}
-            <tr>
-                <td><a href="{{path("event_show", {"id": event.id})}}"> {{ event.title }}</a></td>
-                <td> {% for category in event.categories %}
-                        <span class="badge badge-secondary m-1">{{ category }}</span>
-                    {% endfor %}
-                </td>
-                <td>{{ event.content|striptags|slice(0, 20)|raw }}</td> {# affiche seulement 20 caractères en partant de 0#}
-                <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    {% if event.image is not empty %} {# si img présente affiche là dans tableau#}
-                        <img src="{{ asset(event.image.webPath) }}" style="max-height: 70px"/>
-                    {% endif %}
-                </td>
-                <td>
-                    <a class="btn btn-success" href="{{ path('event_show', {'id': event.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                    <a class="btn btn-info" href="{{ path('event_edit', {'id': event.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
+        <section class="portfolio-experiment">
+        <a href="{{ path('home')}}">
+         
+        <div class="row">
+            <div class="col-4 bg-primary colonne1"><p>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</p></div>
+            <div class="col-6 colonne2"><p>{{ event.title }}-{{ event.location }}</p></div>
+            <span class="line -right"></span>
+            <span class="line -top"></span>
+            <span class="line -left"></span>
+            <span class="line -bottom"></span>
+        </div>
+        
+        </a>
+        </section>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('event_new') }}">Create new</a>
+    </div>
 {% endblock %}

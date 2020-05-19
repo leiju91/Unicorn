@@ -29,3 +29,4 @@ services:
         tags:
             - {name: knp_menu.menu_builder, method: mainMenu, alias: main}
             - {name: knp_menu.menu_builder, method: adminMenu, alias: admin}
+            
