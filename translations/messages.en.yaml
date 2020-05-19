@@ -11,3 +11,10 @@ user:
   logout: Logout
   sign_in: Please sign in.
   connexion: Sign in
+
+
+adminMenu:
+  event: Shows
+  category: Categories
+  image: Images
+  user: Users

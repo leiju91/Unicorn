@@ -11,3 +11,10 @@ user:
   logout: Déconnexion
   sign_in: Veuillez vous connecter.
   connexion: Se connecter
+
+
+adminMenu:
+  event: Concerts
+  category: Catégories
+  image: Images
+  user: Utilisateurs
