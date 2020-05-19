@@ -26,4 +26,14 @@ class AppController extends AbstractController
             'controller_name' => 'AppController',
         ]);
     }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        return $this->render('contact/index.html.twig', [
+            'controller_name' => 'AppController',
+        ]);
+    }
 }

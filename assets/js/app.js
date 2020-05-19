@@ -1,5 +1,6 @@
-import("./common");
-import $ from "jquery";
+import('./common');
+
+
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -14,6 +15,7 @@ import "../scss/app.scss";
 // import $ from 'jquery';
 import('./home');
 import('./event');
+
 
 
 
