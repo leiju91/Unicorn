@@ -13,7 +13,16 @@
         </nav>
        
        
-                {% block body %}{% endblock %}
+            {% block body %}{% endblock %}
+            <div id="footer">
+            {% block footer %}
+                <div class="container">
+                    <p>&copy; Site réalisé par <span>Wild Unicorn</span> | 2020 </p>
+                    <p><a href="{{ path('contact') }}">Contact</a> | <a href="{{ path('home') }}">Mentions légales</a></p>
+                </div>
+                
+            {% endblock %}
+        </div>
    
          {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}

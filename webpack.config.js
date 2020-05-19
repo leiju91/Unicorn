@@ -28,6 +28,7 @@ Encore
   .addEntry("event", "./assets/js/event.js")
   .addEntry("generic", "./assets/js/generic.js")
   .addEntry("detail", "./assets/js/detail.js")
+  .addEntry("admin", "./assets/js/admin.js")
   //.addEntry('page1', './assets/js/page1.js')
   //.addEntry('page2', './assets/js/page2.js')
 
