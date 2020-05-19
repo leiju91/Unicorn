@@ -30,6 +30,22 @@ a {
   color: inherit;
 }
 
+#footer {
+  color: white;
+  font-family: "Roboto";
+  text-align: center;
+  opacity: 0.6;
+
+  span {
+    color: #ff00ff;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #ff00ff;
+  }
+}
+
 @import "/front_end/detail.scss";
 @import "/front_end/event.scss";
 
