@@ -10,6 +10,7 @@
         <div class="detail-header">
             <h1>{{ event.title }}</h1>
             <div class="metadata" id="date"> {{ event.createdAt|date('H:i') }} </div>
+            <div class="loc"> At {{ event.location }}</div>
         </div>        
         <button type="button" class="btn btn-outline-secondary" id="cat">{{ event.categories[0].title }}</button>
         <div class="content">

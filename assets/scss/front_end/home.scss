@@ -1,7 +1,16 @@
 body {
-  background-color:black;
+  background-color: black;
 }
 .carousel-item {
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  background-size: cover;
+
+  img {
+    visibility: hidden;
+  }
+}
 
 @media (min-width: 769px) {
   .carousel-item {
@@ -12,14 +21,12 @@ body {
     > div {
       position: absolute;
       bottom: 80px;
-      right: 15%;
+      right: 10%;
       top: 5%;
       z-index: 999999;
       background-color: red;
       width: 180px;
-      
-     
-      
+
       color: white;
       text-align: center;
 
@@ -53,9 +60,8 @@ body {
 }
 @media (min-width: 968px) {
   .carousel-item {
-    max-height: 917px;
     > div {
-      min-width: 100px;
+      width: 300px;
       z-index: 0;
     }
   }

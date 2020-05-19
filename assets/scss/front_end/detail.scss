@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 // ALL
 .container {
   margin-top: 90px;
@@ -18,6 +22,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  .loc {
+    color: white;
+    margin-left: 30px;
+  }
 }
 
 #date {
