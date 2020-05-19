@@ -74,4 +74,6 @@ Encore
 //.enableReactPreset()
 //.addEntry('admin', './assets/js/admin.js')
 
+  // DataTable
+  Encore.addLoader({ test: /datatables\.net.*/, loader: 'imports-loader?define=>false' });
 module.exports = Encore.getWebpackConfig();
