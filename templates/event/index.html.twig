@@ -7,19 +7,24 @@
 
 {% block body %}
 {% for event in events %}
-    <section class="portfolio-experiment container">
-        <a>
-            <div class="al">
-                <div class="row justify-content-between">
-                    <div class="col-sm-2 "><span class="text">{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</span></div>
-                    <div class="col-sm-5"><span class="text">{{ event.title }}<br> - {{ event.location }}</span></div>
-                </div>
-                    <span class="line -right"></span>
-                    <span class="line -top"></span>
-                    <span class="line -left"></span>
-                    <span class="line -bottom"></span>
-            </div>
-        </a>
+    <div class="container">
+    <section class="portfolio-experiment">
+        <div class="row justify-content-center">
+        
+            <a>
+                <div class="al">
+                        <div class="col-3 bg-warning "><span class="text">{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</span></div>
+                        <div class="col"><span class="text">{{ event.title }}<br> - {{ event.location }}</span></div>
+                        </div>
+                        <span class="line -right"></span>
+                        <span class="line -top"></span>
+                        <span class="line -left"></span>
+                        <span class="line -bottom"></span>
+                    </div>
+            </a>
+        
+        </div>
     </section>
+    </div>
 {% endfor %}
 {% endblock %}
