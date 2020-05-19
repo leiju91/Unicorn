@@ -1,47 +1,86 @@
+//background-image: url(../images/licorne.png);
 
-body {
-    background-color: black;
-}
+
 .text-effect {
   overflow: hidden;
   position: relative;
   
-  // on augemente les contrastes
+
   filter: contrast(110%) brightness(190%);
 }
 
+.encap {
+  overflow: hidden;
+  position: relative;
+  margin-top: -600px;
+
+  .logo{
+    position: relative;
+    transform: scale(1.4);
+ 
+  
+  }
+}
+// ----------------
+.neonb {
+  // background-image: url(../images/licorne.png);
+  position: relative;
+  filter: blur(0.2em);
+  width: 1900px;
+  height: auto;
+
+  
+  
+
+  color: transparent;
+} 
+  .neonb:before,
+  :after {
+
+    content: attr(data-text);
+    
+
+    color: white;
+    
+
+    filter: blur(2em);
+    
+    position: absolute;
+    top: 0; left: 0;
+    pointer-events: none;
+  }
+// -------------------
 .neon {
   position: relative;
   
-  // fonctionne uniquement sur le noir
+
   background: black;
   
-  //text pour modifier l'apercu
+
   color: transparent;
-  
-  &::before,
-  &::after {
-    // ajout de 2 copie sur calque
+} 
+  .neon:before,
+  :after {
+
     content: attr(data-text);
     
-    // couleur blanc pour mettre des couleur dessus
+
     color: white;
     
-    // on floute les couleur pour crer le neon
+
     filter: blur(0.02em);
     
     position: absolute;
     top: 0; left: 0;
     pointer-events: none;
   }
-  
-  // on definie la copie
-  &::after {
+
+
+ .neon:after {
     mix-blend-mode: difference;
   }
-}
 
-// effets sur les 2 class (copie)
+
 .gradient,
 .spotlight {
   position: absolute;
@@ -50,24 +89,24 @@ body {
   z-index: 10;  
 }
 
-// Change
+
 .gradient {
   background: linear-gradient(45deg, red, blue);
   
-  // Multiply mode will paint only the white text
+
   mix-blend-mode: multiply;
 }
 
 .spotlight {
   animation: light 5s infinite linear;
   
-  // These are the lights, color-dodge needs a black bg for optimum effect
+
   background: 
     radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, 
     radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
   top: -100%; left: -100%;
   
-  // Color dodge gives the lights that shimmer effect
+
   mix-blend-mode: color-dodge;
 }
 
@@ -77,19 +116,15 @@ body {
   }
 }
 
-//=== Pen styling, ignore
-
-// Style text
 .neon {
   font: 700 220px 'Lato', sans-serif;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
   
-  &:focus { outline: none; border: 1px dotted white; }
+ 
 }
-
-// Center everything
+ .neon:focus { outline: none; border: 1px dotted white; }
 body {
   background: black;
   display: flex;
@@ -97,4 +132,17 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
+    
 }
+
+@media screen and (max-width: 1024px) {
+ img.fondecran {
+ left: 50%;
+ margin-left: -512px; /* 50% */
+ }
+ 
+}
+
+   
+
+

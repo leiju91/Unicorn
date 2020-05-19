@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/event")
@@ -51,6 +51,25 @@ class EventController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/search", name="event_search", methods={"POST"})
+     */
+    public function search(Request $request, EventRepository $eventRepository): Response
+    {
+        $events = $eventRepository->findByTitle($request->request->get('q'));
+
+        $json = [];
+        foreach ($events as $index => $event) {
+            $json[$index] = [];
+            $json[$index]['title'] = $event->getTitle();
+            $json[$index]['category'] = $event->getCategories()[0]->getTitle();
+            $json[$index]['url'] = '/event/' . $event->getId();
+        }
+
+        return new JsonResponse($json);
+    }
+
 
     /**
      * @Route("/{id}", name="event_show", methods={"GET"})
