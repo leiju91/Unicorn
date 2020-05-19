@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * @Route("/image")
@@ -17,6 +18,7 @@ class ImageController extends AbstractController
 {
     /**
      * @Route("/", name="image_index", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(ImageRepository $imageRepository): Response
     {
@@ -27,6 +29,7 @@ class ImageController extends AbstractController
 
     /**
      * @Route("/new", name="image_new", methods={"GET","POST"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function new(Request $request): Response
     {
@@ -60,6 +63,7 @@ class ImageController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="image_edit", methods={"GET","POST"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function edit(Request $request, Image $image): Response
     {
@@ -80,6 +84,7 @@ class ImageController extends AbstractController
 
     /**
      * @Route("/{id}", name="image_delete", methods={"DELETE"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function delete(Request $request, Image $image): Response
     {
