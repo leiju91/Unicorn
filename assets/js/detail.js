@@ -1,1 +1,1 @@
-import "../scss/detail.scss";
+import "../scss/front_end/detail.scss";
