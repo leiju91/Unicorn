@@ -19,6 +19,7 @@ class EventController extends AbstractController
 {
     /**
      * @Route("/", name="event_index", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(EventRepository $eventRepository): Response
     {
