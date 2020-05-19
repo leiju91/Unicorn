@@ -30,7 +30,14 @@ body {
 
 #date {
   font-family: "Roboto";
-  background-color: #ff00ff;
+  background: linear-gradient(
+    45deg,
+    rgba(118, 6, 229, 1) 0%,
+    rgba(173, 12, 214, 1) 22%,
+    rgba(209, 0, 198, 1) 42%,
+    rgba(182, 13, 216, 1) 66%,
+    rgba(114, 0, 237, 1) 100%
+  );
   padding: 10px 20px;
   color: black;
   transform: translateX(-10px);
@@ -83,7 +90,14 @@ img {
 
   a {
     border-radius: 5px;
-    background-color: #ff00ff;
+    background: linear-gradient(
+      45deg,
+      rgba(118, 6, 229, 1) 0%,
+      rgba(173, 12, 214, 1) 22%,
+      rgba(209, 0, 198, 1) 42%,
+      rgba(182, 13, 216, 1) 66%,
+      rgba(114, 0, 237, 1) 100%
+    );
     color: white;
     font-family: inherit;
     line-height: 1;
