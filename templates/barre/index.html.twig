@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Wild Unicorn{% endblock %}</title>
-        {{ encore_entry_link_tags('generic') }}
-        {% block stylesheets %}{% endblock %}
-    </head>
-    
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BarreController!{% endblock %}
+
+{% block body %}
     <body class="accueil">
         <div class="logo">
-        <div class="lien">
-            <a class="btn btn-outline-light" href="https://127.0.0.1:8000/fr/home">ENTRER</a>
-        </div>
             <div class="text-effect">
-            
                 <div class="licorne">
                     <svg version="1.1" class="image-licorne" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 1959.6 1061.2" style="enable-background:new 0 0 1959.6 1061.2;" xml:space="preserve">
@@ -97,16 +88,9 @@
                         </g>
                     </svg>
                 </div>
+            
                 <div class="gradient"></div>
                 <div class="spotlight"></div>
-            </div> 
+            </div>
         </div>
-        <div class="fond"><span></span></div>
-        
-        
-        {% block body %}{% endblock %}
-   
-        {{ encore_entry_script_tags('generic') }}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+{% endblock %}

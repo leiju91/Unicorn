@@ -1,84 +1,58 @@
-//background-image: url(../images/licorne.png);
+@import "~bootstrap/scss/bootstrap";
 
 
-.text-effect {
+
+
+.logo {
+  margin: 0px;
   overflow: hidden;
+  height: 900px;
   position: relative;
-  
-
-  filter: contrast(110%) brightness(190%);
-}
-
-.encap {
-  overflow: hidden;
-  position: relative;
-  margin-top: -600px;
-
-  .logo{
-    position: relative;
-    transform: scale(1.4);
- 
-  
+  .text-effect {
+    width: 100%;
+    height: 100vh;
+    filter: contrast(110%) brightness(190%);
   }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 2%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 90%,rgba(0,0,0,1) 54%,rgba(0,0,0,1) 100%);
+    margin: 0px;
+  }
+}
+.lien {
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,0);
+  z-index: 9999;
 }
 // ----------------
-.neonb {
-  // background-image: url(../images/licorne.png);
-  position: relative;
-  filter: blur(0.2em);
-  width: 1900px;
-  height: auto;
-
-  
-  
-
-  color: transparent;
+.image-licorne {
+  position: absolute;
+  top: 40%;
+  left: 52%;
+  transform: translate(-50%, -50%) scale(1.4);
+  filter: blur(1.8px);
+  width: 90%;
+  // height: 100%;
 } 
-  .neonb:before,
-  :after {
+.fond {
+  background-color: black;
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 888888;
+}
 
-    content: attr(data-text);
-    
-
-    color: white;
-    
-
-    filter: blur(2em);
-    
-    position: absolute;
-    top: 0; left: 0;
-    pointer-events: none;
-  }
-// -------------------
-.neon {
-  position: relative;
-  
-
-  background: black;
-  
-
-  color: transparent;
-} 
-  .neon:before,
-  :after {
-
-    content: attr(data-text);
-    
-
-    color: white;
-    
-
-    filter: blur(0.02em);
-    
-    position: absolute;
-    top: 0; left: 0;
-    pointer-events: none;
-  }
-
-
- .neon:after {
-    mix-blend-mode: difference;
-  }
 
 
 .gradient,
@@ -89,59 +63,62 @@
   z-index: 10;  
 }
 
-
 .gradient {
-  background: linear-gradient(45deg, red, blue);
-  
-
+  background: linear-gradient(120deg, red, blue);
   mix-blend-mode: multiply;
 }
 
 .spotlight {
   animation: light 5s infinite linear;
-  
-
   background: 
     radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, 
     radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
   top: -100%; left: -100%;
-  
-
   mix-blend-mode: color-dodge;
 }
-
+.fond {
+  background-color: black;
+}
+ 
 @keyframes light {
   100% {
     transform: translate3d(50%, 50%, 0);
   }
 }
 
-.neon {
-  font: 700 220px 'Lato', sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0;
-  
- 
-}
- .neon:focus { outline: none; border: 1px dotted white; }
-body {
-  background: black;
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+@media only screen and (max-width: 767px) {
+/* smartphone */
+  .logo {
     
+    &:after {
+      background: linear-gradient(to top, rgba(0,0,0,1) 20%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 75%,rgba(0,0,0,1) 60%,rgba(0,0,0,1) 100%);
+    }
+  }
+  .image-licorne {
+  position: absolute;
+  top: 35%;
+  left: 52%;
+  transform: translate(-50%, -50%) scale(1.6);
+  filter: blur(1.6px);
+  width: 90%;
+  // height: 100%;
+} 
+.fond {
+  background-color: black;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 888888;
 }
 
-@media screen and (max-width: 1024px) {
- img.fondecran {
- left: 50%;
- margin-left: -512px; /* 50% */
- }
- 
 }
+
+
+
+
+
 
    
 
