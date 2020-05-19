@@ -4,11 +4,12 @@
 
 {% block body %}
 {% if events|length %}
+<div class="container-fluide">
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     {% for event in events %}
-    <div class="carousel-item {%if loop.first %} active {% endif %}">
-      <img src="/uploads/{{ event.image.path }}" class="d-block w-100">
+    <div class="carousel-item {%if loop.first %} active {% endif %}" style="background-image:url('/uploads/{{ event.image.path }}')">
+      <img src="/uploads/{{ event.image.path }}" class="d-block">
       <div>
             <h2>{{ event.title |upper}}</h2>
             <div>{{ event.createdAt|date('d/m/Y') }}</div>
@@ -29,6 +30,17 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
+
+<section>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
+    <h1>Je recherche un concert</h1>
+    <div class="search" style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
+        <input type="text" name="q" placeholder="Nom du groupe"style="padding: 20px; background: #EFEFEF; width: 500px;">
+        <div class="search-result" style="display:flex; justify-content:center; align-items:center; flex-direction: column;width: 100%"></div>
+    </div>
+</div>
+</section>
 {% else %}
 
 {% endif %}

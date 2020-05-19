@@ -1,12 +1,23 @@
-@import '../common.scss';
 body {
   background-color:black;
 }
+.carousel-item {
 
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    background-size:cover;
+
+    img {
+      visibility: hidden;
+    }
+  }
 
 @media (min-width: 769px){
   .carousel-item {
-    max-height: 440px;
+    max-height: 650px;
+    overflow: hidden;
+
     //je m'adresse aux div à l'inerieur de la div je peux faire çà car je suis en scss
     > div {
       position: absolute;
@@ -54,7 +65,7 @@ body {
 }
 @media (min-width: 968px) {   
   .carousel-item {
-    max-height:917px ;
+
     > div {
 
       width: 300px;
@@ -90,9 +101,3 @@ body {
     }
   }
 }
-
-
-
-
-
-
