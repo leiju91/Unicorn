@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
 {% block title %}Image index{% endblock %}
 
@@ -6,23 +6,25 @@
     <h1>Image index</h1>
 
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
-                <th>Id</th>
                 <th>Name</th>
                 <th>Path</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for image in images %}
             <tr>
-                <td>{{ image.id }}</td>
                 <td>{{ image.name }}</td>
-                <td>{{ image.path }}</td>
                 <td>
-                    <a href="{{ path('image_show', {'id': image.id}) }}">show</a>
-                    <a href="{{ path('image_edit', {'id': image.id}) }}">edit</a>
+                    {% if image is not empty %} {# si img présente affiche là dans tableau#}
+                        <img src="{{ asset(image.webPath) }}" style="max-height: 70px"/>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-success" href="{{ path('image_show', {'id': image.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" href="{{ path('image_edit', {'id': image.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}
