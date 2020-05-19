@@ -27,6 +27,9 @@ class Builder
         $menu->addChild("Concert", [
             "route" => "event_index",
         ]);
+        $menu->addChild("Contact", [
+            "route" => "contact",
+        ]);
 
 
         return $menu;

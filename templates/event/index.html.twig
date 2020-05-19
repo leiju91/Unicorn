@@ -1,30 +1,25 @@
-{% extends 'admin_base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Event index{% endblock %}
-{% block stylesheets %}
-
-{% endblock %}
+{% block stylesheets %}{% endblock %}
 
 {% block body %}
-{% for event in events %}
     <div class="container">
-    <section class="portfolio-experiment">
-        <div class="row justify-content-center">
-        
-            <a>
-                <div class="al">
-                        <div class="col-3 bg-warning "><span class="text">{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</span></div>
-                        <div class="col"><span class="text">{{ event.title }}<br> - {{ event.location }}</span></div>
-                        </div>
-                        <span class="line -right"></span>
-                        <span class="line -top"></span>
-                        <span class="line -left"></span>
-                        <span class="line -bottom"></span>
-                    </div>
-            </a>
-        
+        {% for event in events %}
+        <section class="portfolio-experiment">
+        <a href="{{ path('home')}}">
+         
+        <div class="row">
+            <div class="col-4 bg-primary colonne1"><p>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</p></div>
+            <div class="col-6 colonne2"><p>{{ event.title }}-{{ event.location }}</p></div>
+            <span class="line -right"></span>
+            <span class="line -top"></span>
+            <span class="line -left"></span>
+            <span class="line -bottom"></span>
         </div>
-    </section>
+        
+        </a>
+        </section>
+        {% endfor %}
     </div>
-{% endfor %}
 {% endblock %}
