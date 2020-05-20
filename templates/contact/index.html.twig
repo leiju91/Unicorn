@@ -1,8 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-<div class="container">
-    <h1>Contactez Wild Unicorn</h1>
-</div>
 
-{# {{ form(form) }} #}
-{% endblock body %}
+{% block title %}Our Contact Form{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Send" />
+        {{ form_end(form) }}
+
+
+    </div>
+
+{% endblock %}
