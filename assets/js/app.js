@@ -1,4 +1,6 @@
 import('./common');
+import $ from 'jquery';
+console.log($)
 
 
 /*
@@ -51,47 +53,49 @@ search.addEventListener('focus', (event) => {
         }
     });
 });*/
-
-// je mets un écouteur sur le focus
-$('.search > input[type="text"]').on('focus', function (e) {
-    e.preventDefault();
-    // tu me déclenche sur l'evenemùent
-    $(this).on('keyup', function (e) {
+$(document).ready(function () {
+    // je mets un écouteur sur le focus
+    $('.search > input[type="text"]').on('focus', function (e) {
         e.preventDefault();
-        // pour chaquer frappe au clavier tu récupère la valeur
-        let q = $(this).val();
+        // tu me déclenche sur l'evenemùent
+        $(this).on('keyup', function (e) {
+            e.preventDefault();
+            // pour chaquer frappe au clavier tu récupère la valeur
+            let q = $(this).val();
 
-        if (q.length >= 2) {
-            $.ajax({
-                //J'interroge le server sur l'url "/fr/event/search" via ajax avec la méthode post
-                type: "POST",
-                url: "/fr/event/search",
-                //paramètres qu'on passe à la requète si je suis en get data transmet dans dans l'url et si je suis en post data transmet dans le corp de la requête
-                data: { q: q },//on transmets l'objet q dans la requète clé et valeur
-                success: function (data) { //méthode de réponse la clé est success contient une fonction annonyme data qui est la réponse qu'on attend du server
-                    $('.search-result').html(null);//je réinitialise à 0 le contenu
-                    //console.log(data);
-                    // pour chaque element dans le tableau tu récupère un tableau évenement
-                    $.each(data, function (i, event) {
-                        console.log(event);
-                        //à chaque itération j'ajoute le contenu du lien
-                        $('.search-result')
-                            .append('<a href="'
-                                + event.url
-                                + '" style="color:white;background-color:red;display:block;padding:10px 20px;width: 100%;">'
-                                + event.title
-                                + ' <span>'
-                                + event.category
-                                + '</span></a>');
-                    });
-                },
-                // j'attends du json
-                dataType: "json"
-            });
-        } else {
-            $('.search-result').html(null);
-        }
+            if (q.length >= 2) {
+                $.ajax({
+                    //J'interroge le server sur l'url "/fr/event/search" via ajax avec la méthode post
+                    type: "POST",
+                    url: "/fr/event/search",
+                    //paramètres qu'on passe à la requète si je suis en get data transmet dans dans l'url et si je suis en post data transmet dans le corp de la requête
+                    data: { q: q },//on transmets l'objet q dans la requète clé et valeur
+                    success: function (data) { //méthode de réponse la clé est success contient une fonction annonyme data qui est la réponse qu'on attend du server
+                        $('.search-result').html(null);//je réinitialise à 0 le contenu
+                        //console.log(data);
+                        // pour chaque element dans le tableau tu récupère un tableau évenement
+                        $.each(data, function (i, event) {
+                            console.log(event);
+                            //à chaque itération j'ajoute le contenu du lien
+                            $('.search-result')
+                                .append('<a href="'
+                                    + event.url
+                                    + '" style="color:white;background-color:rgba(209,0,198,1);display:block;padding:10px 20px;width: 100%;">'
+                                    + event.title
+                                    + ' <span>'
+                                    + event.category
+                                    + '</span></a>');
+                        });
+                    },
+                    // j'attends du json
+                    dataType: "json"
+                });
+            } else {
+                $('.search-result').html(null);
+            }
+        });
     });
 });
+
 
 
