@@ -1,9 +1,9 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}{{"category.index"|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>{{"category.index"|trans}}</h1>
 
     <table id="category-table" class="table">
         <thead class="thead-dark">
@@ -23,7 +23,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">{{"category.no_record"|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>

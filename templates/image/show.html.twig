@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
 {% block title %}Image{% endblock %}
 
@@ -8,21 +8,20 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ image.id }}</td>
-            </tr>
-            <tr>
                 <th>Name</th>
                 <td>{{ image.name }}</td>
             </tr>
             <tr>
                 <th>Path</th>
-                <td>{{ image.path }}</td>
+                <td>
+                    {% if image is not empty %} {# si img présente affiche là dans tableau#}
+                        <img class="img-fluid" src="{{ asset(image.webPath) }}">
+                    {% endif %}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('admin_image') }}">back to list</a>
+    <a href="{{ path('admin_image') }}">{{"back_to_list"|trans}}</a>
 
     <a href="{{ path('image_edit', {'id': image.id}) }}">edit</a>
 

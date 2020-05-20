@@ -19,17 +19,24 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('content')
-            ->add('created_at')
-            ->add('location')
+            ->add('title', null, [
+                "label" => "event.title",
+            ])
+            ->add('content', null, [
+                "label" => "event.content",
+            ])
+            ->add('created_at', null, [
+                "label" => "event.created_at",
+            ])
+            ->add('location', null, [
+                "label" => "event.location",
+            ])
             // Inclus le formulaire d'image dans le formulaire article
             ->add('image', ImageType::class, ['label' => false])
             ->add('deleteImage', CheckboxType::class, [
                 'label' => 'event.delete_image',
                 'required' => false, // Pas obligatoire
             ])
-            ->add('location')
             ->add('categories', EntityType::class, [
                 'label' => 'event.categories',
                 'class' => Category::class,
@@ -41,7 +48,6 @@ class EventType extends AbstractType
                         ->orderBy('c.title', 'asc');
                 },
             ])
-            ->add("location")
 
             // Ajout du submit
             ->add('save', SubmitType::class, ['label' => 'save']);

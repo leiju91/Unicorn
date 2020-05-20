@@ -36,6 +36,9 @@ event:
   image: Images
   actions: Actions
   no_record: Pas d'évènements trouvés
+  delete_image: Supprimer l'image
+  location: Localisation
+  edit: Editer un évènement
 
 
 category:
@@ -58,3 +61,7 @@ image:
 form:
   title:
     category: Titre de la catégorie
+
+save: Enregistrer
+delete: Supprimer
+back_to_list: De retour au listing

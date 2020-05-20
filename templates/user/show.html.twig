@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
 {% block title %}User{% endblock %}
 
@@ -8,10 +8,6 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
             <tr>
                 <th>Email</th>
                 <td>{{ user.email }}</td>
@@ -23,7 +19,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_user') }}">back to list</a>
+    <a href="{{ path('admin_user') }}">{{"back_to_list"|trans}}</a>
 
     <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
 

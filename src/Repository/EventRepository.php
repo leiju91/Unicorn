@@ -24,6 +24,9 @@ class EventRepository extends ServiceEntityRepository
     public function findWithLimit($nbr)
     {
         return $this->createQueryBuilder('e')
+            ->addSelect("i, c") // Ajout des select pour optimiser la requête
+            ->leftJoin("e.category", "c")
+            ->leftJoin("e.image", "i")
             ->setMaxResults($nbr)
             ->getQuery()
             ->getResult();
@@ -34,6 +37,9 @@ class EventRepository extends ServiceEntityRepository
     public function findByTitle($value)
     {
         return $this->createQueryBuilder('e')
+            ->addSelect("i, c") // Ajout des select pour optimiser la requête
+            ->leftJoin("e.category", "c")
+            ->leftJoin("e.image", "i")
             ->andWhere('e.title LIKE :val')
             ->setParameter('val', '%' . $value . '%')
             ->orderBy('e.created_at', 'DESC')
