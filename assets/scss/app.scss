@@ -19,10 +19,13 @@ nav {
     flex-direction: row;
     color: white;
     .nav-link {
-      padding: 20px;
+      padding: 0px;
       color: white;
     }
   }
+  .bg-primary {
+    background-color:black;
+}
 }
 
 a {
