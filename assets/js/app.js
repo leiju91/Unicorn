@@ -17,6 +17,8 @@ import "../scss/app.scss";
 // import $ from 'jquery';
 import('./home');
 import('./event');
+import('./contact');
+
 
 // Search
 /*const search = document.querySelector('.search > input[type="text"]');
