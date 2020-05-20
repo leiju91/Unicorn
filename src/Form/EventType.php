@@ -44,7 +44,7 @@ class EventType extends AbstractType
             ->add("location")
 
             // Ajout du submit
-            ->add('save', SubmitType::class, ['label' => 'save']);
+            ->add('send', SubmitType::class, ['label' => 'send']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
