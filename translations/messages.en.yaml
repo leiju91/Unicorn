@@ -11,6 +11,11 @@ user:
   logout: Logout
   sign_in: Please sign in.
   connexion: Sign in
+  index: Users' list
+  new: Add an user
+  roles: Roles
+  actions: Actions
+  no_record: No users found
 
 
 adminMenu:
@@ -18,3 +23,31 @@ adminMenu:
   category: Categories
   image: Images
   user: Users
+  logout: Logout
+
+event:
+  index: Events' list
+  new: Add an event
+  title: Title
+  categories: Categories
+  content: Content
+  created_at: Created at
+  image: Images
+  actions: Actions
+  no_record: No events found
+
+
+category:
+  index: Categories' list
+  new: Add a category
+  title: Title
+  actions: Actions
+  no_record: No categories found
+
+image:
+  index: Images' list
+  new: Add an image
+  name: Name
+  image: Image
+  actions: Actions
+  no_record: No images found

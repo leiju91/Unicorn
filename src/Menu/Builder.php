@@ -86,6 +86,9 @@ class Builder
         $menu->addChild("adminMenu.user", [
             "route" => "admin_user",
         ]);
+        $menu->addChild("adminMenu.logout", [
+            "route" => "app_logout",
+        ]);
 
 
         return $menu;

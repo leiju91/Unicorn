@@ -1,17 +1,17 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}{{"category.index"|trans}}{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1>Category index</h1>
+    <h1>{{"category.index"|trans}}</h1>
     <a class="btn btn-primary" href="{{ path('category_new') }}"><i class="fa fa-plus" aria-hidden="true"> Create new</i></a>
 
     <table id="category-table" class="table">
         <thead class="thead-dark">
             <tr>
-                <th>Title</th>
-                <th>actions</th>
+                <th>{{"category.title"|trans}}</th>
+                <th>{{"category.actions"|trans}}</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3"{{"category.no_record"|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
