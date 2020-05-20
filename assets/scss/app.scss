@@ -35,6 +35,13 @@ a {
   font-family: "Roboto";
   text-align: center;
   opacity: 0.6;
+  padding: 0;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  p {
+    margin: 0;
+  }
 
   span {
     color: #ff00ff;
@@ -48,6 +55,3 @@ a {
 
 @import "/front_end/detail.scss";
 @import "/front_end/event.scss";
-
-
-
