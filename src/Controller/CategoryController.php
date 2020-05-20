@@ -20,12 +20,12 @@ class CategoryController extends AbstractController
      * @Route("/", name="category_index", methods={"GET"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function index(CategoryRepository $categoryRepository): Response
-    {
-        return $this->render('category/index.html.twig', [
-            'categories' => $categoryRepository->findAll(),
-        ]);
-    }
+    // public function index(CategoryRepository $categoryRepository): Response
+    // {
+    //     return $this->render('category/index.html.twig', [
+    //         'categories' => $categoryRepository->findAll(),
+    //     ]);
+    // }
 
     /**
      * @Route("/new", name="category_new", methods={"GET","POST"})
