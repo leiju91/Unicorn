@@ -3,6 +3,11 @@ $primary:#404858;
 @import 'common.scss';
 @import '~bootswatch/dist/lumen/_bootswatch.scss';
 
+
+body {
+ background-color: $secondary;
+}  
+
 $side-width : 250px;
 .wrapper {
     display: flex;

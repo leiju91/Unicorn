@@ -3,7 +3,9 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Category index</h1>
+    <a class="btn btn-primary" href="{{ path('category_new') }}"><i class="fa fa-plus" aria-hidden="true"> Create new</i></a>
 
     <table id="category-table" class="table">
         <thead class="thead-dark">
@@ -28,6 +30,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('category_new') }}">Create new</a>
+</div>
 {% endblock %}
