@@ -5,7 +5,11 @@
 
 {% block title %}{{ event.title }}{% endblock %}
 {% block body %}
-<div class="container">   
+{# rajout barre #}
+<div class="container-fluide">
+    {{include('barre/index.html.twig')}}
+</div>
+<div class="container"> 
     <div class="detail">
         <div class="detail-header">
             <h1>{{ event.title }}</h1>
