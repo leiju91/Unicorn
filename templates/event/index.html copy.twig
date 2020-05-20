@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event index{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+{# rajout barre #}
+<div class="container-fluide">
+    {{include('barre/index.html.twig')}}
+</div>
+    <div class="container">
+        {% for event in events %}
+        <section class="portfolio-experiment">  
+        <div class="detail">
+        <div class="row detail-header">
+            <h1 class="col-4">{{ event.title }}<br></h1>
+            <div class="col-4 metadata colonne1" id="date"> {{ event.createdAt|date('H:i') }}</div>
+            <div class="col-4 colonne2 loc"> </div>
+            <span class="line -right"></span>
+            <span class="line -top"></span>
+            <span class="line -left"></span>
+            <span class="line -bottom"></span>
+        </div>
+        </div>
+        
+        </a>
+        </section>
+        {% endfor %}
+    </div>
+{% endblock %}
