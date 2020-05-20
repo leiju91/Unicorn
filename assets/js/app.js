@@ -18,7 +18,6 @@ import "../scss/app.scss";
 import('./home');
 
 
-
 // Search
 /*const search = document.querySelector('.search > input[type="text"]');
 const result = document.querySelector('.search > .search-result');
