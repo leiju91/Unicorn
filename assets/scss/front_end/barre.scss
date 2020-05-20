@@ -64,29 +64,20 @@
     transform: translate3d(50%, 50%, 0);
   }
 }
-
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 375px) {
   .logo {
 
   &:after {
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 62%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
   }
 }
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 768px) {
   .logo {
 
   &:after {
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
-  }
-}
-}
-@media only screen and (min-width: 768px) {
-  .logo {
-
-  &:after {
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 58%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,0) 37%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 35%,rgba(0,0,0,1) 80%);
   }
 }
 }
