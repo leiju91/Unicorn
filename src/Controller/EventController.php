@@ -57,9 +57,10 @@ class EventController extends AbstractController
      * @Route("/search", name="event_search", methods={"POST"})
      */
     public function search(Request $request, EventRepository $eventRepository): Response
-    {
+    { //je dis au controller que je veux recupérer les info ci dessous et en suite je retourne une réponse json
+        // on recupere les donnée avec la variable q qu'on a passer en paramète avec ajax
         $events = $eventRepository->findByTitle($request->request->get('q'));
-
+        //j'initialise une variable pour le tableau json
         $json = [];
         foreach ($events as $index => $event) {
             $json[$index] = [];
@@ -70,7 +71,6 @@ class EventController extends AbstractController
 
         return new JsonResponse($json);
     }
-
 
     /**
      * @Route("/{id}", name="event_show", methods={"GET"})
