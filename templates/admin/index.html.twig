@@ -1,19 +1,21 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Event index{% endblock %}
+{% block title %}{{"event.index"|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
+<div class="container">
+    <h1>{{"event.index"|trans}}</h1>
 
+    <a class="btn btn-primary" href="{{ path('category_new') }}"><i class="fa fa-plus" aria-hidden="true"> {{"event.new"|trans}}</i></a>
     <table id="event-table" class="table">
         <thead class="thead-dark">
             <tr>
-                <th>Title</th>
-                <th>Categories</th>
-                <th>Content</th>
-                <th>Created_at</th>
-                <th>Image</th>
-                <th>Actions</th>
+                <th>{{"event.title"|trans}}</th>
+                <th>{{"event.categories"|trans}}</th>
+                <th>{{"event.content"|trans}}</th>
+                <th>{{"event.created_at"|trans}}</th>
+                <th>{{"event.image"|trans}}</th>
+                <th>{{"event.actions"|trans}}</th>
             </tr>
         </thead>
         <tbody>
@@ -38,11 +40,10 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">{{"event.no_record"|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('event_new') }}">Create new</a>
+</div>
 {% endblock %}

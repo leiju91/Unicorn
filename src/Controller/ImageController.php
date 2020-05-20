@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Image;
 use App\Form\ImageType;
-use App\Repository\ImageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
