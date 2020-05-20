@@ -35,6 +35,9 @@ event:
   image: Images
   actions: Actions
   no_record: No events found
+  delete_image: Delete image
+  location: Location
+  edit: Edit an event
 
 
 category:
@@ -56,3 +59,7 @@ image:
 form:
   title:
     category: Category's title
+
+save: Save
+delete: Delete
+back_to_list: Back to list

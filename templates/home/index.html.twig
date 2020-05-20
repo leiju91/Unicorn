@@ -9,8 +9,8 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     {% for event in events %}
-    <div class="carousel-item {%if loop.first %} active {% endif %}" style="background-image:url('/uploads/{{ event.image.path }}')">
-      <img src="/uploads/{{ event.image.path }}" class="d-block">
+    <div class="carousel-item {%if loop.first %} active {% endif %}" style="background-image:url('/uploads/images/{{ event.image.path }}')">
+      <img src="/uploads/images/{{ event.image.path }}" class="d-block">
       <div>
             <h2>{{ event.title |upper}}</h2>
             <div class="text">{{ event.createdAt|date('d/m/Y') }}</div>
