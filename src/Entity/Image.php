@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Repository\ImageRepository;
 
 /**
  * @ORM\Entity(repositoryClass=ImageRepository::class)
@@ -134,7 +135,9 @@ class Image
      */
     public function getPublicRootDir()
     {
-        return __DIR__ . '/../../public/uploads/';
+        return __DIR__ . '/../../public/uploads/images/'; 
+        // public/uploads/ -> téléverse dans le fichier uploads
+        // Correction public/uploads/images/ -> téléverse dans le fichier images
     }
 
      /**
@@ -142,7 +145,7 @@ class Image
      */
     public function getWebPath()
     {
-        return '/uploads/images/'.$this->path;
+        return '/uploads/images/'.$this->path; // Comme avant getPublicRootDir -> public/uploads/ => ne peut pas afficher images dans l'administration
     }
 
     public function __toString()
