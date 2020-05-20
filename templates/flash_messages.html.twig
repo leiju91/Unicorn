@@ -1,5 +1,4 @@
 {% block flash_messages %}
-    <div class="container">
     {% for type, messages in app.session.flashbag.all() %}
         {% for message in messages %}
             <div class="alert alert-{{ type }} alert-dismissible" role="alert">
@@ -8,5 +7,4 @@
             </div>
         {% endfor %}
     {% endfor %}
-    </div>
 {% endblock %}
