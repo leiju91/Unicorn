@@ -53,3 +53,8 @@ image:
   image: Image
   actions: Actions
   no_record: Pas d'images trouvées
+  file: Chemin de l'image
+
+form:
+  title:
+    category: Titre de la catégorie

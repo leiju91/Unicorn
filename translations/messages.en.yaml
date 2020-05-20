@@ -51,3 +51,8 @@ image:
   image: Image
   actions: Actions
   no_record: No images found
+  file: Image's path
+
+form:
+  title:
+    category: Category's title
