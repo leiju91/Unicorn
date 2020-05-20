@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\EventRepository;
+use App\Entity\Category;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -33,6 +34,16 @@ class Event
      * @ORM\Column(type="datetime")
      */
     private $created_at;
+
+    /**
+     * @var \Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="events")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * })
+    */
+    private $category;
 
     /**
      * @var ?Image
@@ -155,20 +166,6 @@ class Event
         return $this;
     }
 
-
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Comment[]
      */
@@ -237,6 +234,32 @@ class Event
     public function setLocation(string $location): self
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    
+
+    /**
+     * Get the value of category
+     *
+     * @return  \Category
+     */ 
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /*
+     * Set the value of category
+     *
+     * @param  \Category  $category
+     *
+     * @return  self
+     */ 
+    public function setCategory(Category $category)
+    {
+        $this->category = $category;
 
         return $this;
     }
