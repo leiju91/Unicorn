@@ -18,7 +18,7 @@ class ImageType extends AbstractType
             ])
 
             // Ajout du submit
-            ->add('save', SubmitType::class, ['label' => 'save']);
+            // ->add('save', SubmitType::class, ['label' => 'save']);
         ;
     }
 

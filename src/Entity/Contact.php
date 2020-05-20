@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -13,25 +15,31 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Contact
 {
 
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+    */
+    private $id;
 
     /**
      *@var string|null
      * @Assert\NotBlank
-     * @ORM\Column(type="string", length=255)
-     * @Assert\length(min=2, max=100)
+     * @ORM\Column(type="string", length = 255)
+     * @Assert\Length(min = 2, max = 100)
      */
     private $firstname;
 
     /**
      *@var string|null
      * @Assert\NotBlank
-     * @ORM\Column(type="string", length=255)
-     * @Assert\length(min=2, max=100)
+     * @ORM\Column(type="string", length = 255)
+     * @Assert\Length(min=2, max=100)
      */
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length = 180, unique=true)
      * @Assert\NotBlank
      * @Assert\Email
      */
@@ -40,7 +48,7 @@ class Contact
     /**
      * @var string|null
      * @Assert\NotBlank
-     * @Assert\Length(min=10)
+     * @Assert\Length(min = 10)
      */
     private $message;
 
