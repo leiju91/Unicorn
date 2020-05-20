@@ -27,6 +27,7 @@
                 <td>
                     <a class="btn btn-success" href="{{ path('image_show', {'id': image.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <a class="btn btn-info" href="{{ path('image_edit', {'id': image.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                    <a class="btn btn-danger" href="{{ path('image_delete', {'id': image.id}) }}" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}

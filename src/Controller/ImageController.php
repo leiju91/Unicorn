@@ -52,6 +52,7 @@ class ImageController extends AbstractController
 
     /**
      * @Route("/{id}", name="image_show", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function show(Image $image): Response
     {
