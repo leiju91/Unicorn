@@ -23,7 +23,7 @@
             <tr>
                 <td><a href="{{path("event_show", {"id": event.id})}}"> {{ event.title }}</a></td>
                 <td> {% for category in event.categories %}
-                        <span class="badge badge-secondary m-1">{{ category }}</span>
+                        <span class="badge badge-primary m-2">{{ category }}</span>
                     {% endfor %}
                 </td>
                 <td>{{ event.content|striptags|slice(0, 20)|raw }}</td> {# affiche seulement 20 caractères en partant de 0#}
