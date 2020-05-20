@@ -64,8 +64,6 @@ class Builder
 
         return $menu;
     }
-<<<<<<< HEAD
-=======
 
 
     /**
@@ -93,5 +91,4 @@ class Builder
         return $menu;
     }
 
->>>>>>> add AdminControler + templates
 }
