@@ -3,14 +3,17 @@
 namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
+use Symfony\Component\Security\Core\Security;
 
 class Builder
 {
     private $factory;
+    private $security;
 
-    public function __construct(FactoryInterface $factory)
+    public function __construct(FactoryInterface $factory, Security $security)
     {
         $this->factory = $factory;
+        $this->security = $security;
     }
 
     /**
@@ -31,9 +34,38 @@ class Builder
             "route" => "contact",
         ]);
 
+        // Si ROLE_ADMIN affiche menu Administration sinon il ne s'affichera pas pour ROLE_USER
+        if ($this->security->isGranted("ROLE_ADMIN")) {
+            $menu->addChild("Administration", [
+            "route" => "admin",
+            ]);
+        }
+
+        // Ajout de menu "Se connecter" ou "Se déconnecter"
+
+        // if (!$this->security->isGranted("ROLE_USER") || !$this->security->isGranted("ROLE_ADMIN")) {
+
+        //     $menu->addChild("menu.login", [
+        //         "route" => "app_login",
+        //     ]);
+
+        //     $menu->addChild("menu.register", [
+        //         "route" => "app_register",
+        //     ]);
+        // } 
+        
+        // if ($this->security->isGranted("ROLE_USER") || $this->security->isGranted("ROLE_ADMIN")) {
+        //     $menu->addChild("menu.logout", [
+        //         "route" => "app_logout",
+        //     ]); 
+        // }
+
+    
 
         return $menu;
     }
+<<<<<<< HEAD
+=======
 
 
     /**
@@ -45,19 +77,21 @@ class Builder
 
         // Ajout d'élèments dans le menu
         $menu->addChild("adminMenu.event", [
-            "route" => "event_index",
+            "route" => "admin",
         ]);
         $menu->addChild("adminMenu.category", [
-            "route" => "category_index",
+            "route" => "admin_category",
         ]);
         $menu->addChild("adminMenu.image", [
-            "route" => "image_index",
+            "route" => "admin_image",
         ]);
         $menu->addChild("adminMenu.user", [
-            "route" => "user_index",
+            "route" => "admin_user",
         ]);
 
 
         return $menu;
     }
+
+>>>>>>> add AdminControler + templates
 }

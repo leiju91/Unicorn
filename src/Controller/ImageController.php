@@ -20,12 +20,12 @@ class ImageController extends AbstractController
      * @Route("/", name="image_index", methods={"GET"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function index(ImageRepository $imageRepository): Response
-    {
-        return $this->render('image/index.html.twig', [
-            'images' => $imageRepository->findAll(),
-        ]);
-    }
+    // public function index(ImageRepository $imageRepository): Response
+    // {
+    //     return $this->render('image/index.html.twig', [
+    //         'images' => $imageRepository->findAll(),
+    //     ]);
+    // }
 
     /**
      * @Route("/new", name="image_new", methods={"GET","POST"})
