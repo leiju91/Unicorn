@@ -29,4 +29,15 @@ class HomeController extends AbstractController
 
         return $this->render('home/merci.html.twig');
     }
+
+    /**
+     * @Route("/mentions-legales", name="mentions-legales")
+     */
+    public function mentions()
+    {
+        // return $this->render('mentions-legales/mentions-legales.html.twig', [
+        //     'controller_name' => 'AppController',
+        // ]);
+        return $this->render('home/mentions-legales.html.twig');
+    }
 }
