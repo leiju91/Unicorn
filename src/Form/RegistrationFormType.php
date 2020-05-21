@@ -48,9 +48,9 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             // Ajout du submit
-            ->add('save', SubmitType::class, [
-                'label' => 'user.save'
-            ])
+            // ->add('save', SubmitType::class, [
+            //     'label' => 'user.save'
+            // ])
         ;
     }
 
