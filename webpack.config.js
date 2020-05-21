@@ -23,15 +23,15 @@ Encore
    * Each entry will result in one JavaScript file (e.g. app.js)
    * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
    */
-  .addEntry('app', './assets/js/app.js')
-  .addEntry('home', './assets/js/home.js')
-  .addEntry('event', './assets/js/event.js')
-  .addEntry('generic', './assets/js/generic.js')
-  .addEntry('admin', './assets/js/admin.js')
-  .addEntry('barre', './assets/js/barre.js')
-  .addEntry('detail', './assets/js/detail.js')
-  .addEntry('contact', './assets/js/contact.js')
-  //.addEntry('page1', './assets/js/page1.js')
+  .addEntry("app", "./assets/js/app.js")
+  .addEntry("home", "./assets/js/home.js")
+  .addEntry("event", "./assets/js/event.js")
+  .addEntry("generic", "./assets/js/generic.js")
+  .addEntry("admin", "./assets/js/admin.js")
+  .addEntry("barre", "./assets/js/barre.js")
+  .addEntry("detail", "./assets/js/detail.js")
+  .addEntry("contact", "./assets/js/contact.js")
+  .addEntry("mentions-legales", "./assets/js/mentions-legales.js")
   //.addEntry('page2', './assets/js/page2.js')
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
@@ -78,5 +78,8 @@ Encore
 //.addEntry('admin', './assets/js/admin.js')
 
 // DataTable
-Encore.addLoader({ test: /datatables\.net.*/, loader: 'imports-loader?define=>false' });
+Encore.addLoader({
+  test: /datatables\.net.*/,
+  loader: "imports-loader?define=>false",
+});
 module.exports = Encore.getWebpackConfig();

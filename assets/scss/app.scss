@@ -1,4 +1,4 @@
-$primary : #ff00ff;
+$primary: #ff00ff;
 
 @import "common.scss";
 
@@ -26,8 +26,8 @@ nav {
     }
   }
   .bg-primary {
-    background-color:black;
-}
+    background-color: black;
+  }
 }
 
 a {
@@ -43,6 +43,10 @@ a {
   padding: 0;
   margin-bottom: 50px;
   margin-top: 50px;
+
+  a {
+    padding: 0px;
+  }
 
   p {
     margin: 0;
@@ -63,8 +67,6 @@ a {
 @import "/front_end/barre.scss";
 @import "/front_end/contact.scss";
 
-
-
 // html {
 //   height: 100%;
 // }
@@ -83,7 +85,7 @@ a {
   text-align: left;
 }
 .text-r {
-  text-align: right
+  text-align: right;
 }
 .text-j {
   text-align: justify;
@@ -229,7 +231,9 @@ a {
 .form-control:focus {
   box-shadow: none;
 }
-.form-control::-webkit-input-placeholder { color: #e6e6e6; }
+.form-control::-webkit-input-placeholder {
+  color: #e6e6e6;
+}
 
 /* Container */
 
@@ -248,7 +252,7 @@ a {
 
 .main-bg {
   background: #424242;
-  background: linear-gradient( #424242, #212121);
+  background: linear-gradient(#424242, #212121);
 }
 
 /* Login & Register Pages*/
