@@ -34,6 +34,11 @@
 
 <section>
 <div class="container ">
+    <div class="title">
+        <h1 class="title-home">À propos<i class="fas fa-compact-disc fa-spin"></i></h1>
+        <p class="text-home">Tu as envie de faire la fête ? <br>Tu cherches un bon plan pour le week-end ? <br>Quelque soit ton style, tu es au bon endroit. Je te présente WildUnicorn !</p>
+        <p class="text-home">WildUnicorn est un site qui regroupe tout les événements du luxembourg.</p>
+    </div>
   <div class="recherche"style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
       <h3>Je recherche un concert</h3>
       <div class="search" style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
@@ -43,11 +48,12 @@
   </div>
 </div>
 </section>
-{{include('footer.html.twig')}}
+
 {% else %}
 
 {% endif %}
 {% endblock %}
+
 {% block javascripts %}
 {{ encore_entry_script_tags('app') }}
 {% endblock %}

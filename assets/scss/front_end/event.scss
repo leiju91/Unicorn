@@ -4,17 +4,48 @@ $pad : 0.7em;
 
 body{
   background-color: black;
-  padding-bottom: 20px;
+  padding-top: 100px;
+  position: relative;
+}
+.title-event{
+
+  color: white;
+  background: linear-gradient(
+    45deg,
+    rgba(118, 6, 229, 1) 0%,
+    rgba(173, 12, 214, 1) 22%,
+    rgba(209, 0, 198, 1) 42%,
+    rgba(182, 13, 216, 1) 66%,
+    rgba(114, 0, 237, 1) 100%
+  );
+  font-family: "Anton";
+  // text-transform: uppercase;
+  letter-spacing: .2rem;
+  padding: 15px 30px;
+  text-align: center;
+  max-width: 180px;
+  white-space: nowrap;
+  z-index: 99999;
+  font-size: 1.2rem;
+}
+.a {
+  text-decoration: none;
 }
 
+.detail-event h2 {
+  color: black;
+  background-color: white;
+  font-family: "Anton";
+  padding: 15px 30px;
+  text-align: center;
+  max-width: 250px;
+  white-space: nowrap;
 
-.portfolio-experiment {
-  background:black;
-  max-width: 30em;
-
-    
-  
-    a {
+  >div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .loc {
     color: white;
     padding: 0 34px; 
     display: inline-block;
@@ -43,6 +74,7 @@ body{
     }
 
   }
+}
 
 
 #date {
@@ -110,7 +142,7 @@ body{
       transform-origin: right;
     }  
   }
-a {
+.effet {
     color: white;
     padding: 0 34px; 
     display: inline-block;
@@ -119,9 +151,19 @@ a {
     cursor: pointer;
     letter-spacing: 0.06em;
     text-decoration: none;
+    a{
+      text-decoration: none;
+      color: white;
     }
-  a:hover,
-  a:active {
+    }
+  .effet:hover,
+ .effet:active {
+    text-decoration: none;
+    .text {
+      transform: translate3d(0,0,0);
+      transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+      
+    }
 
       &:after {
       transform: scale3d(0,1,1);
@@ -164,7 +206,17 @@ a {
 
   padding: 0px 15px 0 0;
   font-size: 1.8rem;
-
+  
+  .detail-event h2 {
+    color: black;
+    background-color: white;
+    font-family: "Anton";
+    padding: 10px 15px;
+    text-align: center;
+    max-width: 150px;
+    white-space: nowrap;
+    font-size: 2rem;
+  }
 
 }
 

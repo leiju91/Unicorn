@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('merci') }}
+{% endblock %}
+
+
+{% block body %}
+{# rajout barre #}
+<div class="container-fluide">
+    {{include('barre/index.html.twig')}}
+</div>
+<section>
+<div class="container-merci">
+<p>Ce site est un projet de soutenance avec des données fictives. En conséquence, toute ressemblance, ou similitude avec des personnages et des groupes existants ou ayant existé, ne saurait être que coïncidence fortuite.</p> 
+   <p>
+   Un mot de remerciement pour NumericALL:<br>
+   MERCI à nos formateurs (Jérôme , Igor, Loic, Guillaume) qui ont été présent même en dehors des horaires pour nous aider, et celà même à 23h!!!.<br> 
+   MERCI à  Émeline et Marion ont préparé pour les futurs entretiens.<br>
+   MERCI à Chahineze pour son suivi.<br>
+   MERCI à Brigitte et Alan pour pour avoir cru en notre potentiel et leur organistion.<br>
+   MERCI à nos sponsors qui ont crus en nous et nous ont permis de continuer la formation malgrès le confinement.</p>
+</div>
+</section>
+{% endblock %}
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}

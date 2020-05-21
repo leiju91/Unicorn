@@ -66,7 +66,7 @@ class EventController extends AbstractController
             $json[$index] = [];
             $json[$index]['title'] = $event->getTitle();
             $json[$index]['category'] = $event->getCategories()[0]->getTitle();
-            $json[$index]['url'] = '/event/' . $event->getId();
+            $json[$index]['url'] = '/fr/event/' . $event->getId();
         }
 
         return new JsonResponse($json);

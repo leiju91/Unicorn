@@ -21,4 +21,12 @@ class HomeController extends AbstractController
             'events' => $events,
         ]);
     }
+    /**
+     * @Route("/merci", name="merci")
+     */
+    public function merci()
+    {
+
+        return $this->render('home/merci.html.twig');
+    }
 }
