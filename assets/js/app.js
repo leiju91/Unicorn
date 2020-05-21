@@ -20,6 +20,8 @@ import('./event');
 import('./contact');
 
 
+
+
 // Search
 /*const search = document.querySelector('.search > input[type="text"]');
 const result = document.querySelector('.search > .search-result');
@@ -72,22 +74,30 @@ $(document).ready(function () {
                     url: "/fr/event/search",
                     //paramètres qu'on passe à la requète si je suis en get data transmet dans dans l'url et si je suis en post data transmet dans le corp de la requête
                     data: { q: q },//on transmets l'objet q dans la requète clé et valeur
-                    success: function (data) { //méthode de réponse la clé est success contient une fonction annonyme data qui est la réponse qu'on attend du server
+                    success: function (data) {//méthode de réponse la clé est success contient une fonction annonyme data qui est la réponse qu'on attend du server
                         $('.search-result').html(null);//je réinitialise à 0 le contenu
-                        //console.log(data);
-                        // pour chaque element dans le tableau tu récupère un tableau évenement
-                        $.each(data, function (i, event) {
-                            console.log(event);
-                            //à chaque itération j'ajoute le contenu du lien
-                            $('.search-result')
-                                .append('<a href="'
-                                    + event.url
-                                    + '" style="color:white;background-color:rgba(209,0,198,1);display:block;padding:10px 20px;width: 100%;">'
-                                    + event.title
-                                    + ' <span>'
-                                    + event.category
-                                    + '</span></a>');
-                        });
+                        if (data.length > 0) {
+                            $.each(data, function (i, event) {
+                                console.log(event);
+                                //à chaque itération j'ajoute le contenu du lien
+                                //console.log(data);
+                                // pour chaque element dans le tableau tu récupère un tableau évenement
+                                $('.search-result')
+                                    .append('<a href="'
+                                        + event.url
+                                        + '" style="color:white;background-color:rgba(209,0,198,1);display:block;padding:10px 20px;width: 100%;">'
+                                        + event.title
+                                        + ' <span>'
+                                        + event.category
+                                        + '</span></a>');
+                            })
+
+                        } else {
+                            $('.search-result').html(null)
+                                .append('<p " style="color: rgba(209, 0, 198, 1); display: block; padding: 10px 20px; width: 100 %; ">'
+                                    + 'Il n\' a pas évenement'
+                                    + '<p/>');
+                        }
                     },
                     // j'attends du json
                     dataType: "json"

@@ -21,7 +21,7 @@ nav {
     flex-direction: row;
     color: white;
     .nav-link {
-      padding: 0px;
+      padding: 10px 0px;
       color: white;
     }
   }
@@ -66,6 +66,7 @@ a {
 @import "/front_end/event.scss";
 @import "/front_end/barre.scss";
 @import "/front_end/contact.scss";
+@import "/front_end/merci.scss";
 
 // html {
 //   height: 100%;
@@ -104,6 +105,7 @@ a {
 }
 
 /* Ligne */
+@import "/front_end/merci.scss";
 
 .line-b {
   border-bottom: 1px solid #ff00ff !important;

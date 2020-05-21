@@ -12,7 +12,7 @@
     <div class="carousel-item {%if loop.first %} active {% endif %}" style="background-image:url('/uploads/images/{{ event.image.path }}')">
       <img src="/uploads/images/{{ event.image.path }}" class="d-block">
       <div>
-            <h2>{{ event.title |upper}}</h2>
+            <h2 class=text-home>{{ event.title |upper}}</h2>
             <div class="text">{{ event.createdAt|date('d/m/Y') }}</div>
             <div class="text">{{ event.createdAt|date('H:i') }}</div>
             <div class="text content">{{ event.location|striptags|slice(0, 20)|raw }}</div>
@@ -33,7 +33,12 @@
 </div>
 
 <section>
-<div class="container ">
+<div>
+    <div class="title">
+        <h1 class="title-home">À propos<i class="fas fa-compact-disc fa-spin"></i></h1>
+        <p class="text-home">Tu as envie de faire la fête ? <br>Tu cherches un bon plan pour le week-end ? <br>Quelque soit ton style, tu es au bon endroit. Je te présente WildUnicorn !</p>
+        <p class="text-home">WildUnicorn est un site qui regroupe tout les événements du luxembourg.</p>
+    </div>
   <div class="recherche"style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
       <h3>Je recherche un concert</h3>
       <div class="search" style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
@@ -43,11 +48,12 @@
   </div>
 </div>
 </section>
-{{include('footer.html.twig')}}
+
 {% else %}
 
 {% endif %}
 {% endblock %}
+
 {% block javascripts %}
 {{ encore_entry_script_tags('app') }}
 {% endblock %}
