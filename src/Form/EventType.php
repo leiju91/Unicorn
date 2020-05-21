@@ -50,7 +50,7 @@ class EventType extends AbstractType
             ])
 
             // Ajout du submit
-            ->add('send', SubmitType::class, ['label' => 'send']);
+            ->add('save', SubmitType::class, ['label' => 'save']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
