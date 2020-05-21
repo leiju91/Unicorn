@@ -9,15 +9,32 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('mail', EmailType::class)
-        ->add('message', TextareaType::class)
-        ->add('send', SubmitType::class, ['label' => 'Send']);
+        ->add('email', null, [
+            "label" => "user.email",
+        ])
+        ->add('message', TextareaType::class, [
+            "label" => "message",
+            'constraints' => [
+                new NotBlank([
+                    'message' => 'user.password_message',
+                ]),
+                new Length([
+                    'min' => 50,
+                    'minMessage' => 'Your message should be at least {{ limit }} characters.',
+                    // max length allowed by Symfony for security reasons
+                    'max' => 255,
+                ]),
+            ],
+        ]);
+        // ->add('send', SubmitType::class, ['label' => 'Send']);
     }
 
     public function configureOptions(OptionsResolver $resolver)

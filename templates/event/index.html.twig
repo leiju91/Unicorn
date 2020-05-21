@@ -11,7 +11,7 @@
     <div class="container">
         {% for event in events %}
         <section class="portfolio-experiment">
-        <a href="{{ path('home')}}">  
+        <a href="{{ path('event_show', {'id': event.id})}}">
             <div class="detail">
                 <div class="row detail-header">
                     <h1 class="col-4">{{ event.title }}<br></h1>

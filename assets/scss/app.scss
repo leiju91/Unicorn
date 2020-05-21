@@ -61,8 +61,8 @@ a {
 @import "/front_end/detail.scss";
 @import "/front_end/event.scss";
 @import "/front_end/barre.scss";
-@import "/front_end/contact.scss";
-@import ""
+
+
 
 
 
@@ -79,6 +79,7 @@ a {
 // }
 
 /* Alignement du texte */
+
 .text-c {
   text-align: center;
 }
@@ -102,6 +103,11 @@ a {
 }
 .text-rose:hover {
   color: whitesmoke;
+}
+
+.logo-badge{
+  
+  transform: translate(-1%, 0);
 }
 
 /* Ligne */
@@ -274,4 +280,48 @@ a {
   font-weight: 800;
   letter-spacing: -10px;
   margin-bottom: 0;
+}
+
+
+/* animation */
+
+.pulse {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30rem;
+  
+  circle {
+      fill: rgba(255, 0, 255, 0.24);;
+      transform: scale(0);
+      opacity: 0;
+      transform-origin: 50% 50%;
+      animation: pulse 4s infinite cubic-bezier(.5,.5,0,1);
+      
+      &:nth-child(2) {
+          fill: #7fc6a4;
+          animation: pulse 2s 0.75s cubic-bezier(.5,.5,0,1);
+      }
+      
+      &:nth-child(3) {
+          fill: #e5f77d;
+          animation: pulse 2s 1.5s cubic-bezier(.5,.5,0,1);
+      }
+      
+  }
+  
+}
+
+@keyframes pulse {
+  
+  25% {
+      opacity: 0.4;
+  }
+  
+  100% {
+      transform: scale(1);
+  }
+  
 }
