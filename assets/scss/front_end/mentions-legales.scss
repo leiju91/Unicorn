@@ -13,16 +13,20 @@
 }
 h1 {
   font-size: 50px;
-  opacity: 0.5;
+  opacity: 0.4;
+  color: white;
+  font-family: "Anton";
 }
 
-h1,
 h2 {
   color: white;
   font-family: "Anton";
   margin: 35px;
+  font-size: 25px;
+  opacity: 0.7;
 }
 
 p {
   text-align: justify;
+  opacity: 0.7;
 }
