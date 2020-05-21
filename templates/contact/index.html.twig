@@ -1,33 +1,45 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-{{ encore_entry_link_tags('contact') }}
-{% endblock %}
 
-{% block title %}About us{% endblock %}
+{% block title %}{{"contact"|trans}}{% endblock %}
 
 
 {% block body %}
-{{include('barre/index.html.twig')}}
-    <div id="block-contact" class="container">
-    
-    <div class="formulaire">
-        <form name="contact" method="post">
-        
-        <div class="form-group"><label for="contact_mail" class="required"><h2>Mail</h2></label><input type="email" id="contact_mail" name="contact[mail]" required="required" class="form-control"></div>
-        
-        <div class="form-group"><label for="contact_message" class="required"><h2>Message</h2></label><textarea id="contact_message" name="contact[message]" required="required" class="form-control"></textarea></div>
-        <div class="form-group"><button type="submit" id="contact_send" name="contact[send]" class="btn btn-primary btn-lg btn-block">Send</button></div><input type="hidden" id="contact__token" name="contact[_token]" value="2A24R-OGrNcqQeft_KHL0Lg1VjCYXwM6ynVf_wng32s">
+<div class="login-container text-c animated flipInX">
+        <div>
+        <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+        </div>
+        <h3 class="text-whitesmoke">{{"user.contact"|trans}}</h3>
+        <div class="container-content">
+        <form class="margin-t text-whitesmoke" method="POST">
+        {{ form_start(contactForm) }}
+            <div class="form-group">
+                {{ form_row(contactForm.email, 
+                {'attr': {"class": "form-control", 'placeholder': 'user.email_example'|trans}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(contactForm.message, 
+                {'attr': {"class": "form-control", 'placeholder': 'user.contact_message'|trans}}) }}
+            </div>
+
+            <button type="submit" class="form-button button-l margin-b">
+                {{"send"|trans}}
+            </button>
+        {{ form_end(contactForm) }}
         </form>
     </div>
     
-        <svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <circle id="Oval" cx="512" cy="512" r="512"></circle>
         <circle id="Oval" cx="512" cy="512" r="512"></circle>
         <circle id="Oval" cx="512" cy="512" r="512"></circle>
-        <circle id="Oval" cx="512" cy="512" r="512"></circle>
-        <circle id="Oval" cx="512" cy="512" r="512"></circle>
-        </svg>
+    </svg>
     
 
+</div>
 
+
+        
+    
 {% endblock %}
+
+

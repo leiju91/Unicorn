@@ -7,8 +7,8 @@
     <div>
         <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
     </div>
-    <div class="container-content">
         <h3 class="text-whitesmoke">{{"user.register"|trans}}</h3>
+    <div class="container-content">
         <form class="margin-t text-whitesmoke" method="POST">
         {{ form_start(registrationForm) }}
             <div class="form-group">
@@ -32,6 +32,12 @@
         {{ form_end(registrationForm) }}
         </form>
     </div>
+
+    <svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+    </svg>
 </div>
 
     {#{{ form_start(registrationForm) }}

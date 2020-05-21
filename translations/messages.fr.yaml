@@ -6,6 +6,7 @@ user:
   save: M'enregistrer
   register: M'inscrire
   password_message: Veuillez entrez un mot de passe de plus de 6 caractères.
+  contact_message: Veuillez entrez un message de plus de 50 caractères.
   terms_message: Veuillez agréer à nos conditions.
   login: Connexion
   logout: Déconnexion
@@ -16,6 +17,7 @@ user:
   roles: Rôles
   actions: Actions
   no_record: Pas d'utilisateurs trouvés
+  contact: Contactez-nous
 
 
 adminMenu:
@@ -65,3 +67,5 @@ form:
 save: Enregistrer
 delete: Supprimer
 back_to_list: De retour au listing
+send: Envoyer
+message: Message

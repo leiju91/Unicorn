@@ -31,13 +31,13 @@ class ContactController extends AbstractController
             
             $mailer->send($message);
 
-            $this->addFlash('success', 'It sent!');
+            
 
             return $this->redirectToRoute('contact');
         }
 
         return $this->render('contact/index.html.twig', [
-            'form' => $form->createView(),
+            'contactForm' => $form->createView(),
         ]);
     }
 }
