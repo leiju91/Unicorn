@@ -35,7 +35,7 @@ class KernelListener implements EventSubscriberInterface
         // var_dump($locale); // ex: string(2) "fr"
         if (null == $route && null == $locale) {
             // La redirection se fait vers home (/{_locale}) => http://127.0.0.1:8000/fr/
-            // $event->setResponse(new RedirectResponse($this->router->generate('app', ['_locale' => 'fr'])));
+            $event->setResponse(new RedirectResponse($this->router->generate('home', ['_locale' => 'fr'])));
         }
     }
 }

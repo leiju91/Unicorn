@@ -67,3 +67,8 @@ delete: Delete
 back_to_list: Back to list
 send: Send 
 message: Message 
+
+menu: 
+  login: Login
+  register: Register
+  logout: Logout
