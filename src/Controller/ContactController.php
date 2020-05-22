@@ -22,7 +22,7 @@ class ContactController extends AbstractController
             $contactFormData = $form->getData();
 
             $message = (new \Swift_Message('You Got Mail!'))
-                ->setFrom($contactFormData['mail'])
+                ->setFrom("nepasrepondre@wildunicorn.com")
                 ->setTo('julienfiore@yahoo.fr')
                 ->setBody(
                     $contactFormData['message'],
@@ -32,13 +32,13 @@ class ContactController extends AbstractController
             
             $mailer->send($message);
 
-            $this->addFlash('success', 'It sent!');
+            
 
             return $this->redirectToRoute('contact');
         }
 
         return $this->render('contact/index.html.twig', [
-            'form' => $form->createView(),
+            'contactForm' => $form->createView(),
         ]);
     }
 }
