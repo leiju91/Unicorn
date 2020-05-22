@@ -140,15 +140,21 @@ body {
   }
 }
 .effet {
-  color: white;
-  padding: 0 34px;
-  display: inline-block;
-  border: $thick solid transparent;
-  position: relative;
-  cursor: pointer;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  a {
+    color: white;
+    padding: 0 34px; 
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    }
+.effet:hover,
+.effet:active {
     text-decoration: none;
     color: white;
   }
@@ -211,3 +217,8 @@ body {
     font-size: 2rem;
   }
 }
+
+
+
+
+

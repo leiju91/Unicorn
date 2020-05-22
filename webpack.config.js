@@ -32,6 +32,7 @@ Encore
   .addEntry("mentions-legales", "./assets/js/mentions-legales.js")
   .addEntry("generic", "./assets/js/generic.js")
 
+
   //.addEntry('page1', './assets/js/page1.js')
   //.addEntry('page2', './assets/js/page2.js')
 
