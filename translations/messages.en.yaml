@@ -17,8 +17,7 @@ user:
   roles: Roles
   actions: Actions
   no_record: No users found
-  contact: Contact us 
-
+  contact: Contact us
 
 adminMenu:
   event: Shows
@@ -40,7 +39,6 @@ event:
   delete_image: Delete image
   location: Location
   edit: Edit an event
-
 
 category:
   index: Categories' list
@@ -65,19 +63,32 @@ form:
 save: Save
 delete: Delete
 back_to_list: Back to list
-send: Send 
-message: Message 
+send: Send
+message: Message
 
-menu: 
+menu:
   login: Login
   register: Register
   logout: Logout
+
 home:
   a_propos: About
   a_fete: You feel like partying?
-  a_fete2: Looking for a good plan for the weekend?  
+  a_fete2: Looking for a good plan for the weekend?
   a_fete3: Whatever your style, you've come to the right place.
   a_fete4: Meet WildUnicorn!
   a_fete5: WildUnicorn is a site which gathers all the musical events of luxembourg.
   a_concert: I'm looking for a concert
   a_detail: Detail
+
+detail:
+  song: Song
+  vid: Video
+  buy: Buy tickets
+
+thanks:
+  thanks1: Thank you
+  thanks2: A word of thanks for NumericALL
+
+mentionleg:
+  mentionleg: Legal Notices
