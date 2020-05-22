@@ -41,24 +41,24 @@ class Builder
             ]);
         }
 
-        // Ajout de menu "Se connecter" ou "Se déconnecter"
+        // Ajout de menu "Se connecter" ou "Se déconnecter" en fonction si utilisateur connecté ou non
 
-        // if (!$this->security->isGranted("ROLE_USER") || !$this->security->isGranted("ROLE_ADMIN")) {
+        if (!$this->security->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
 
-        //     $menu->addChild("menu.login", [
-        //         "route" => "app_login",
-        //     ]);
+            $menu->addChild("menu.login", [
+                "route" => "app_login",
+            ]);
 
-        //     $menu->addChild("menu.register", [
-        //         "route" => "app_register",
-        //     ]);
-        // } 
+            $menu->addChild("menu.register", [
+                "route" => "app_register",
+            ]);
+        } 
         
-        // if ($this->security->isGranted("ROLE_USER") || $this->security->isGranted("ROLE_ADMIN")) {
-        //     $menu->addChild("menu.logout", [
-        //         "route" => "app_logout",
-        //     ]); 
-        // }
+        if ($this->security->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            $menu->addChild("menu.logout", [
+                "route" => "app_logout",
+            ]); 
+        }
 
     
 

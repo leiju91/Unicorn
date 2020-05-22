@@ -69,3 +69,9 @@ delete: Supprimer
 back_to_list: De retour au listing
 send: Envoyer
 message: Message
+
+menu: 
+  login: Se connecter
+  register: S'inscrire
+  logout: Se déconnecter
+  
