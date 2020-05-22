@@ -1,7 +1,7 @@
 user:
   email: Email
   email_example: anonyme@gmail.com
-  terms: <a href="%url%" target="blank">Lire les conditions d'utilisations des données</a> 
+  terms: <a href="%url%" target="blank">Lire les conditions d'utilisations des données</a>
   password: Mot de passe
   save: M'enregistrer
   register: M'inscrire
@@ -19,14 +19,12 @@ user:
   no_record: Pas d'utilisateurs trouvés
   contact: Contactez-nous
 
-
 adminMenu:
   event: Concerts
   category: Catégories
   image: Images
   user: Utilisateurs
   logout: Se déconnecter
-
 
 event:
   index: Liste des évènements
@@ -42,14 +40,12 @@ event:
   location: Localisation
   edit: Editer un évènement
 
-
 category:
   index: Liste des catégories
   new: Ajout d'une catégorie
   title: Titre
   actions: Actions
   no_record: Pas de catégories trouvées
-
 
 image:
   index: Liste des images
@@ -70,17 +66,29 @@ back_to_list: De retour au listing
 send: Envoyer
 message: Message
 
-menu: 
+menu:
   login: Se connecter
   register: S'inscrire
   logout: Se déconnecter
-  
+
 home:
   a_propos: À propos
   a_fete: Tu as envie de faire la fête ?
-  a_fete2: Tu cherches un bon plan pour le week-end ? 
+  a_fete2: Tu cherches un bon plan pour le week-end ?
   a_fete3: Quelque soit ton style, tu es au bon endroit.
   a_fete4: Je te présente WildUnicorn !
   a_fete5: WildUnicorn est un site qui regroupe tous les evénements musicaux du luxembourg.
   a_concert: Je recherche un concert
   a_detail: Détail
+
+detail:
+  song: Son
+  vid: Vidéo
+  buy: Acheter des tickets
+
+thanks:
+  thanks1: Remerciements
+  thanks2: Un mot de remerciement pour NumericALL
+
+mentionleg:
+  mentionleg: Mentions Légales
