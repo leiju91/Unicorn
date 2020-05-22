@@ -24,23 +24,23 @@ class Builder
         $menu = $this->factory->createItem("root");
 
         // Ajout d'élèments dans le menu
-        $menu->addChild("Accueil", [
+        $menu->addChild("menu.accueil", [
             "route" => "home",
         ]);
-        $menu->addChild("Concert", [
+        $menu->addChild("menu.concert", [
             "route" => "event_index",
         ]);
-        $menu->addChild("Contact", [
+        $menu->addChild("menu.contact", [
             "route" => "contact",
         ]);
-        $menu->addChild("Remerciement", [
+        $menu->addChild("menu.remerciement", [
             "route" => "merci",
         ]);
 
 
         // Si ROLE_ADMIN affiche menu Administration sinon il ne s'affichera pas pour ROLE_USER
         if ($this->security->isGranted("ROLE_ADMIN")) {
-            $menu->addChild("Administration", [
+            $menu->addChild("menu.administration", [
                 "route" => "admin",
             ]);
         }

@@ -1,7 +1,7 @@
 {{ form_start(form) }}
     {{ form_errors(form) }} {# Affiche les eventuelles erreurs #}
         {{ form_row(form.title) }}
-        {{ form_row(form.categories) }}
+        {{ form_row(form.categories, {label_attr: {class: 'checkbox-custom'}}) }}
         {{ form_row(form.content) }}
         <div class="media mb-3">
             {% if event is defined and event.image is not empty %}

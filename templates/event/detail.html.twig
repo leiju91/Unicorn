@@ -16,7 +16,12 @@
             <div class="metadata" id="date"> {{ event.createdAt|date('H:i') }} </div>
             <div class="loc"> At {{ event.location }}</div>
         </div>        
-        <button type="button" class="btn btn-outline-secondary" id="cat">{{ event.categories[0].title }}</button>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-secondary" id="cat">{{ event.categories[0].title }}</button>
+        {% if is_granted('ROLE_ADMIN') %}
+                {{ include('event/_delete_form.html.twig') }}
+            </div>   
+        {% endif %}
         <div class="content">
             <div class="hover">
                 <img src="/uploads/images/{{ event.image.path }}" alt="">

@@ -1,7 +1,8 @@
 user:
+  name: User
   email: Email
   email_example: johndoe@gmail.com
-  terms: Terms and conditions
+  terms: <a href="%url%" target="blank">Read terms and conditions (in French)</a>
   password: Password
   save: Submit
   register: Register
@@ -17,7 +18,13 @@ user:
   roles: Roles
   actions: Actions
   no_record: No users found
-  contact: Contact us
+  contact: Contact us 
+  edit: Edit an user
+  success:
+    new: The user "%title%" has been added.
+    edit: The user "%title%" has been modified.
+    delete: The user "%title%" has been deleted.
+
 
 adminMenu:
   event: Shows
@@ -39,6 +46,12 @@ event:
   delete_image: Delete image
   location: Location
   edit: Edit an event
+  delete: Delete an event
+  show: Event
+  success:
+    new: The event "%title%" has been added.
+    edit: The event "%title%" has been modified.
+    delete: The event "%title%" has been deleted.
 
 category:
   index: Categories' list
@@ -46,6 +59,12 @@ category:
   title: Title
   actions: Actions
   no_record: No categories found
+  edit: Edit a category
+  show: Category
+  success:
+    new: The category "%title%" has been added.
+    edit: The category "%title%" has been modified.
+    delete: The category "%title%" has been deleted.
 
 image:
   index: Images' list
@@ -55,6 +74,12 @@ image:
   actions: Actions
   no_record: No images found
   file: Image's path
+  edit: Edit an image
+  show: Image
+  success:
+    new: The image "%title%" has been added.
+    edit: The image "%title%" has been modified.
+    delete: The image "%title%" has been deleted.
 
 form:
   title:
@@ -70,6 +95,15 @@ menu:
   login: Login
   register: Register
   logout: Logout
+<<<<<<< HEAD
+=======
+  accueil: Home
+  concert: Concert
+  administration: Administration
+  remerciement: Acknowledgement
+  contact: Contact
+
+>>>>>>> add translation + flash messages
 
 home:
   a_propos: About

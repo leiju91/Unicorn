@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/event")
@@ -33,7 +34,7 @@ class EventController extends AbstractController
      * @Route("/new", name="event_new", methods={"GET","POST"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TranslatorInterface $translator): Response
     {
         $event = new Event();
         $form = $this->createForm(EventType::class, $event);
@@ -43,6 +44,7 @@ class EventController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($event);
             $entityManager->flush();
+            $this->addFlash("success", $translator->trans("event.success.new", ["%title%" => $event->getTitle()]));
 
             return $this->redirectToRoute('admin');
         }
@@ -90,13 +92,15 @@ class EventController extends AbstractController
      * @Route("/{id}/edit", name="event_edit", methods={"GET","POST"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function edit(Request $request, Event $event): Response
+    public function edit(Request $request, Event $event, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash("success", $translator->trans("event.success.edit", ["%title%" => $event->getTitle()]));
+            
 
             return $this->redirectToRoute('admin');
         }
@@ -112,12 +116,14 @@ class EventController extends AbstractController
      * @Route("/{id}", name="event_delete", methods={"DELETE"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function delete(Request $request, Event $event): Response
+    public function delete(Request $request, Event $event, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
+            $this->render("event/show.html.twig");
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
+            $this->addFlash("success", $translator->trans("event.success.delete", ["%title%" => $event->getTitle()]));
         }
 
         return $this->redirectToRoute('admin');

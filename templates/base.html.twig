@@ -20,7 +20,10 @@
                 <li class="nav-item"><a class="nav-link" href="{{ path('home', {'_locale': 'en'}) }}">EN</a></li>
             </ul>
         </nav>
-            {% block body %}{% endblock %}
+        
+        {% include "flash_messages.html.twig" %}
+
+        {% block body %}{% endblock %}
            
        
         {{ encore_entry_script_tags('app') }}
