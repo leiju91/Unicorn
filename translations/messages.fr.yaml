@@ -1,7 +1,7 @@
 user:
   email: Email
   email_example: anonyme@gmail.com
-  terms: <a href="%url%">Lire les conditions d'utilisations des données</a> 
+  terms: <a href="%url%" target="blank">Lire les conditions d'utilisations des données</a> 
   password: Mot de passe
   save: M'enregistrer
   register: M'inscrire
