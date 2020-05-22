@@ -62,6 +62,13 @@ a {
   }
 }
 
+@media (max-width: 991px) {
+#main-menu ul{
+  flex-direction: column;
+}
+}
+
+
 @import "/front_end/detail.scss";
 @import "/front_end/event.scss";
 @import "/front_end/barre.scss";
