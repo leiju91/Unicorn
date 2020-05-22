@@ -16,7 +16,7 @@
             <div class="text">{{ event.createdAt|date('d/m/Y') }}</div>
             <div class="text">{{ event.createdAt|date('H:i') }}</div>
             <div class="text content">{{ event.location|striptags|slice(0, 20)|raw }}</div>
-            <a href="{{path('event_show', {'id': event.id}) }}"><i class="mr-5 fas fa-lg fa-arrow-right"></i>Détail</a>
+            <a href="{{path('event_show', {'id': event.id}) }}"><i class="mr-5 fas fa-lg fa-arrow-right"></i>{{"home.a_detail"|trans}}</a>
         </div>
     </div>
     {% endfor %}
@@ -33,14 +33,13 @@
 </div>
 
 <section>
-<div>
-    <div class="title">
-        <h1 class="title-home">À propos<i class="fas fa-compact-disc fa-spin"></i></h1>
-        <p class="text-home">Tu as envie de faire la fête ? <br>Tu cherches un bon plan pour le week-end ? <br>Quelque soit ton style, tu es au bon endroit. Je te présente WildUnicorn !</p>
-        <p class="text-home">WildUnicorn est un site qui regroupe tout les événements du luxembourg.</p>
+<div container>
+    <div id="home"class="container-home text-center">
+        <h1 class="title-home font-weight-light">{{"home.a_propos"|trans}}<i class="fas fa-compact-disc fa-spin"></i></h1>
+        <p class="text-home text-center">{{"home.a_fete"|trans}}</br>{{"home.a_fete2"|trans}}<br>{{"home.a_fete3"|trans}}<br>{{"home.a_fete4"|trans}}<br>{{"home.a_fete5"|trans}}</p>
     </div>
-  <div class="recherche"style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
-      <h3>Je recherche un concert</h3>
+  <div class="container-recherche"style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
+      <h3>{{"home.a_concert"|trans}}</h3>
       <div class="search" style="display:flex; justify-content:center; align-items:center; flex-direction: column;">
           <input type="text" name="q" placeholder="Nom du groupe"style="padding: 10px; background: #EFEFEF; width: 200px;">
           <div class="search-result" style="display:flex; justify-content:center; align-items:center; flex-direction: column;width: 100%"></div>
