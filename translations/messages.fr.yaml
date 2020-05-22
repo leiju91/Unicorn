@@ -1,7 +1,7 @@
 user:
   email: Email
   email_example: anonyme@gmail.com
-  terms: Conditions d'utilisation
+  terms: J'autorise ce site à conserver mes données
   password: Mot de passe
   save: M'enregistrer
   register: M'inscrire
