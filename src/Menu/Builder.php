@@ -33,11 +33,15 @@ class Builder
         $menu->addChild("Contact", [
             "route" => "contact",
         ]);
+        $menu->addChild("Remerciement", [
+            "route" => "merci",
+        ]);
+
 
         // Si ROLE_ADMIN affiche menu Administration sinon il ne s'affichera pas pour ROLE_USER
         if ($this->security->isGranted("ROLE_ADMIN")) {
             $menu->addChild("Administration", [
-            "route" => "admin",
+                "route" => "admin",
             ]);
         }
 
@@ -52,15 +56,15 @@ class Builder
             $menu->addChild("menu.register", [
                 "route" => "app_register",
             ]);
-        } 
-        
+        }
+
         if ($this->security->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
             $menu->addChild("menu.logout", [
                 "route" => "app_logout",
-            ]); 
+            ]);
         }
 
-    
+
 
         return $menu;
     }
@@ -93,5 +97,4 @@ class Builder
 
         return $menu;
     }
-
 }

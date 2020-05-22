@@ -72,3 +72,12 @@ menu:
   login: Login
   register: Register
   logout: Logout
+home:
+  a_propos: About
+  a_fete: You feel like partying?
+  a_fete2: Looking for a good plan for the weekend?  
+  a_fete3: Whatever your style, you've come to the right place.
+  a_fete4: Meet WildUnicorn!
+  a_fete5: WildUnicorn is a site which gathers all the musical events of luxembourg.
+  a_concert: I'm looking for a concert
+  a_detail: Detail

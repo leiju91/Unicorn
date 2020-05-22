@@ -1,7 +1,7 @@
 user:
   email: Email
   email_example: anonyme@gmail.com
-  terms: J'autorise ce site à conserver mes données
+  terms: <a href="%url%">Lire les conditions d'utilisations des données</a> 
   password: Mot de passe
   save: M'enregistrer
   register: M'inscrire
@@ -75,3 +75,12 @@ menu:
   register: S'inscrire
   logout: Se déconnecter
   
+home:
+  a_propos: À propos
+  a_fete: Tu as envie de faire la fête ?
+  a_fete2: Tu cherches un bon plan pour le week-end ? 
+  a_fete3: Quelque soit ton style, tu es au bon endroit.
+  a_fete4: Je te présente WildUnicorn !
+  a_fete5: WildUnicorn est un site qui regroupe tous les evénements musicaux du luxembourg.
+  a_concert: Je recherche un concert
+  a_detail: Détail
