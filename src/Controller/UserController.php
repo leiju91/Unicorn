@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/user")
@@ -39,7 +39,7 @@ class UserController extends AbstractController
      * @Security("is_granted('ROLE_ADMIN')")
 
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TranslatorInterface $translator): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -49,6 +49,7 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
+            $this->addFlash("success", $translator->trans("user.success.new", ["%title%" => $user->getEmail()]));
 
             return $this->redirectToRoute('admin_user');
         }
@@ -77,14 +78,14 @@ class UserController extends AbstractController
      * @Security("is_granted('ROLE_ADMIN')")
 
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash("success", $translator->trans("user.success.edit", ["%title%" => $user->getEmail()]));
             return $this->redirectToRoute('admin_user');
         }
 
@@ -101,12 +102,13 @@ class UserController extends AbstractController
      * @Security("is_granted('ROLE_ADMIN')")
 
      */
-    public function delete(Request $request, User $user): Response
+    public function delete(Request $request, User $user, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
+            $this->addFlash("success", $translator->trans("user.success.delete", ["%title%" => $user->getEmail()]));
         }
 
         return $this->redirectToRoute('admin_user');

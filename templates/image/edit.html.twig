@@ -1,9 +1,9 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Edit Image{% endblock %}
+{% block title %}{{"image.edit"|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Edit Image</h1>
+    <h1>{{"image.edit"|trans}}</h1>
 
     {{ include('image/_form.html.twig', {'button_label': 'Update'}) }}
 
