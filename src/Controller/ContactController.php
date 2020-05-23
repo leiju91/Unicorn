@@ -15,11 +15,14 @@ class ContactController extends AbstractController
      */
     public function index(Request $request, \Swift_Mailer $mailer): Response
     {
+        // dd($request->request->all());
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            
 
             $contactFormData = $form->getData();
+            // dd($contactFormData);
 
             $message = (new \Swift_Message('You Got Mail!'))
                 ->setFrom($contactFormData['email'])

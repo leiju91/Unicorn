@@ -19,12 +19,8 @@ user:
   actions: Actions
   no_record: Pas d'utilisateurs trouvés
   contact: Contactez-nous
-  edit: Modifier un utilisateur
-  success:
-    new: L'utilisateur "%title%" a bien été ajouté.
-    edit: L'utilisateur "%title%" a bien été modifié.
-    delete: L'utilisateur "%title%" a bien été supprimé.
-  
+  message: Message
+
 
 adminMenu:
   event: Concerts
