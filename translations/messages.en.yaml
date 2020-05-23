@@ -18,6 +18,7 @@ user:
   actions: Actions
   no_record: No users found
   contact: Contact us 
+  
 
 
 adminMenu:

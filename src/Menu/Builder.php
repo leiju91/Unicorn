@@ -30,14 +30,7 @@ class Builder
         $menu->addChild("Concert", [
             "route" => "event_index",
         ]);
-        $menu->addChild("Contact", [
-            "route" => "contact",
-        ]);
-        $menu->addChild("Remerciement", [
-            "route" => "merci",
-        ]);
-
-
+        
         // Si ROLE_ADMIN affiche menu Administration sinon il ne s'affichera pas pour ROLE_USER
         if ($this->security->isGranted("ROLE_ADMIN")) {
             $menu->addChild("Administration", [
@@ -53,9 +46,6 @@ class Builder
                 "route" => "app_login",
             ]);
 
-            $menu->addChild("menu.register", [
-                "route" => "app_register",
-            ]);
         }
 
         if ($this->security->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
