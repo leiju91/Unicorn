@@ -60,6 +60,7 @@ p.text-home {
   max-width: 500px;
   text-align: justify center!important;
 }
+
 // container recherche
 .container-recherche {
   color: inherit;
@@ -122,6 +123,7 @@ p.text-home {
         display: block;
         //ne prends pas le padding en compte
         box-sizing: border-box;
+        text-decoration: none;
       }
     }
   }
@@ -158,6 +160,7 @@ p.text-home {
       padding: 5px 10px;
       color: black;
       margin: 20px;
+      text-decoration: none;
     }
   }
   .text-home{ 
