@@ -55,6 +55,15 @@ $side-width : 250px;
         }
     }
 
+    a {
+        color: white;
+
+        &:hover {
+            color: rgb(184, 179, 179);
+            text-decoration: none;
+        }
+    }
+
     a[data-toggle="collapse"] {
         position: relative;
     }
