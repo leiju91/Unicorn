@@ -8,27 +8,24 @@ $primary: #ff00ff;
   font-family: "Anton", sans-serif;
   font-family: "Roboto", sans-serif;
 }
+
 nav {
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   z-index: 10;
-
+  
   .navbar-nav {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     color: white;
-    .nav-link {
-      padding: 10px 0px;
-      color: white;
-    }
+  }
   }
   .bg-primary {
     background-color: black;
   }
-}
 
 a {
   //tout mes liens hérite de la couleur du parent
@@ -60,13 +57,23 @@ a {
     text-decoration: none;
     color: #ff00ff;
   }
+  
 }
 
 @media (max-width: 991px) {
 #main-menu ul{
   flex-direction: column;
 }
+
 }
+
+@media (min-width: 992px) {
+nav.navbar{
+  flex-direction: row-reverse;
+}
+}
+
+
 
 
 @import "/front_end/detail.scss";

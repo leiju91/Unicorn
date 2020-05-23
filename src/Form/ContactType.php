@@ -24,7 +24,7 @@ class ContactType extends AbstractType
             "label" => "message",
             'constraints' => [
                 new NotBlank([
-                    'message' => 'user.password_message',
+                    'message' => 'user.message',
                 ]),
                 new Length([
                     'min' => 50,
@@ -33,8 +33,8 @@ class ContactType extends AbstractType
                     'max' => 255,
                 ]),
             ],
-        ]);
-        // ->add('send', SubmitType::class, ['label' => 'Send']);
+        ])
+        ->add('send', SubmitType::class, ['label' => 'Send']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
