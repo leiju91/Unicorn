@@ -95,15 +95,12 @@ menu:
   login: Login
   register: Register
   logout: Logout
-<<<<<<< HEAD
-=======
   accueil: Home
   concert: Concert
   administration: Administration
   remerciement: Acknowledgement
   contact: Contact
 
->>>>>>> add translation + flash messages
 
 home:
   a_propos: About
