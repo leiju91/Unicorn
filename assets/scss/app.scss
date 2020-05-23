@@ -26,10 +26,24 @@ nav {
   .bg-primary {
     background-color: black;
   }
-
+  // -------------------------
+// .btn-sm, .btn-group-sm > .btn {
+//     padding: 0.1rem 0.8rem !important;
+//     font-size: 0.8rem !important;
+//     line-height: 1.5 !important;
+//     border-radius: 0.2rem !important;
+// }
+.btn-sm, .btn-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+// -----------------------------
 a {
   //tout mes liens hérite de la couleur du parent
   color: inherit;
+  padding-right: 100px;
 }
 
 #footer {
@@ -61,20 +75,39 @@ a {
 }
 
 @media (max-width: 991px) {
+  // ------------------------
+  button .btn-sm, .btn-group-sm > .btn {
+    padding: 0.10rem 0.1rem;
+    font-size: 0.6rem;
+ 
+    border-radius: 0.2rem;
+  }
+  // -------------------------------
 #main-menu ul{
   flex-direction: column;
+
+  
 }
+
 
 }
 
 @media (min-width: 992px) {
+   // ------------------------
+  button .btn-sm, .btn-group-sm > .btn {
+    padding: 0.10rem 0.1rem;
+    font-size: 0.6rem;
+ 
+    border-radius: 0.2rem;
+  }
+  // -------------------------------
 nav.navbar{
   flex-direction: row-reverse;
 }
 }
 
 
-
+// ------------fin navbar-------------------------
 
 @import "/front_end/detail.scss";
 @import "/front_end/event.scss";
