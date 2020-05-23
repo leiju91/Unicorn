@@ -104,7 +104,16 @@ a {
 nav.navbar{
   flex-direction: row-reverse;
 }
+
 }
+
+@media (min-width: 992px) {
+nav.navbar{
+  flex-direction: row-reverse;
+}
+}
+
+
 
 
 // ------------fin navbar-------------------------
