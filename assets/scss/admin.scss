@@ -3,6 +3,11 @@ $primary:#404858;
 @import 'common.scss';
 @import '~bootswatch/dist/lumen/_bootswatch.scss';
 
+
+body {
+ background-color: $secondary;
+}  
+
 $side-width : 250px;
 .wrapper {
     display: flex;
@@ -47,6 +52,15 @@ $side-width : 250px;
                 background-color: $primary;
                 text-decoration: none;
             }
+        }
+    }
+
+    a {
+        color: white;
+
+        &:hover {
+            color: rgb(184, 179, 179);
+            text-decoration: none;
         }
     }
 

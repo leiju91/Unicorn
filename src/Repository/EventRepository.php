@@ -19,32 +19,32 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
+
+
+    public function findWithLimit($nbr)
+    {
+        return $this->createQueryBuilder('e')
+            ->addSelect("i, c") // Ajout des select pour optimiser la requête
+            ->leftJoin("e.category", "c")
+            ->leftJoin("e.image", "i")
+            ->setMaxResults($nbr)
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Event[] Returns an array of Event objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function findByTitle($value)
     {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+            ->addSelect("i, c") // Ajout des select pour optimiser la requête
+            ->leftJoin("e.category", "c")
+            ->leftJoin("e.image", "i")
+            ->andWhere('e.title LIKE :val')
+            ->setParameter('val', '%' . $value . '%')
+            ->orderBy('e.created_at', 'DESC')
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Event
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
+

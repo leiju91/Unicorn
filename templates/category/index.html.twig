@@ -1,14 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}{{"category.index"|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>{{"category.index"|trans}}</h1>
 
-    <table class="table">
-        <thead>
+    <table id="category-table" class="table">
+        <thead class="thead-dark">
             <tr>
-                <th>Id</th>
                 <th>Title</th>
                 <th>actions</th>
             </tr>
@@ -16,16 +15,15 @@
         <tbody>
         {% for category in categories %}
             <tr>
-                <td>{{ category.id }}</td>
                 <td>{{ category.title }}</td>
                 <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                    <a class="btn btn-success" href="{{ path('category_show', {'id': category.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn btn-info" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-edit" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">{{"category.no_record"|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>

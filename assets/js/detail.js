@@ -1,1 +1,2 @@
-import "../scss/detail.scss";
+import('./common');
+import "../scss/front_end/detail.scss";

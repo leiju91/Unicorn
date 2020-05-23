@@ -3,18 +3,26 @@
 namespace App\Form;
 
 use App\Entity\User;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 class RegistrationFormType extends AbstractType
 {
+    private $router;
+    public function __construct(RouterInterface $router)
+    {
+        $this->router = $router;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -23,6 +31,9 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 "label" => "user.terms",
+                "label_translation_parameters" => [
+                    "%url%" => $this->router->generate('mentions-legales')
+                ],
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -48,9 +59,9 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             // Ajout du submit
-            ->add('save', SubmitType::class, [
-                'label' => 'user.save'
-            ])
+            // ->add('save', SubmitType::class, [
+            //     'label' => 'user.save'
+            // ])
         ;
     }
 
@@ -62,4 +73,3 @@ class RegistrationFormType extends AbstractType
         ]);
     }
 }
-

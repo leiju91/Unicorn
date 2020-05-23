@@ -8,11 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/app", name="app")
+     * @Route("/mentions-legales", name="mentions-legales")
      */
-    public function index()
+    public function mentions()
     {
-        return $this->render('app/index.html.twig', [
+        return $this->render('mentions-legales/mentions-legales.html.twig', [
             'controller_name' => 'AppController',
         ]);
     }

@@ -10,7 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/event")
@@ -19,6 +20,7 @@ class EventController extends AbstractController
 {
     /**
      * @Route("/", name="event_index", methods={"GET"})
+     * 
      */
     public function index(EventRepository $eventRepository): Response
     {
@@ -32,7 +34,7 @@ class EventController extends AbstractController
      * @Route("/new", name="event_new", methods={"GET","POST"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TranslatorInterface $translator): Response
     {
         $event = new Event();
         $form = $this->createForm(EventType::class, $event);
@@ -42,8 +44,9 @@ class EventController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($event);
             $entityManager->flush();
+            $this->addFlash("success", $translator->trans("event.success.new", ["%title%" => $event->getTitle()]));
 
-            return $this->redirectToRoute('event_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('event/new.html.twig', [
@@ -53,11 +56,32 @@ class EventController extends AbstractController
     }
 
     /**
+     * @Route("/search", name="event_search", methods={"POST"})
+     */
+    public function search(Request $request, EventRepository $eventRepository): Response
+    { //je dis au controller que je veux recupérer les info ci dessous et en suite je retourne une réponse json
+        // on recupere les donnée avec la variable q qu'on a passer en paramète avec ajax
+        $events = $eventRepository->findByTitle($request->request->get('q'));
+        //j'initialise une variable pour le tableau json
+        $json = [];
+        foreach ($events as $index => $event) {
+            $json[$index] = [];
+            $json[$index]['title'] = $event->getTitle();
+            $json[$index]['category'] = $event->getCategories()[0]->getTitle();
+            $json[$index]['url'] = '/fr/event/' . $event->getId();
+        }
+
+        return new JsonResponse($json);
+    }
+
+    /**
      * @Route("/{id}", name="event_show", methods={"GET"})
      */
-    public function show(Event $event): Response
+    public function detail(Event $event): Response
     {
-        return $this->render('event/show.html.twig', [
+        // dd($event);
+
+        return $this->render('event/detail.html.twig', [
             'event' => $event,
         ]);
     }
@@ -68,15 +92,17 @@ class EventController extends AbstractController
      * @Route("/{id}/edit", name="event_edit", methods={"GET","POST"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function edit(Request $request, Event $event): Response
+    public function edit(Request $request, Event $event, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash("success", $translator->trans("event.success.edit", ["%title%" => $event->getTitle()]));
+            
 
-            return $this->redirectToRoute('event_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('event/edit.html.twig', [
@@ -90,14 +116,16 @@ class EventController extends AbstractController
      * @Route("/{id}", name="event_delete", methods={"DELETE"})
      * @Security("is_granted('ROLE_ADMIN')")
      */
-    public function delete(Request $request, Event $event): Response
+    public function delete(Request $request, Event $event, TranslatorInterface $translator): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
+            $this->render("event/show.html.twig");
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
+            $this->addFlash("success", $translator->trans("event.success.delete", ["%title%" => $event->getTitle()]));
         }
 
-        return $this->redirectToRoute('event_index');
+        return $this->redirectToRoute('admin');
     }
 }
