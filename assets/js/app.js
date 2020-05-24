@@ -94,7 +94,7 @@ $(document).ready(function () {
                         } else {
                             $('.search-result').html(null)
                                 .append('<p " style="color: rgba(209, 0, 198, 1); display: block; padding: 10px 20px; width: 100 %; ">'
-                                    + 'Il n\' a pas évenement'
+                                    + 'Il n\' a pas d\'événement'
                                     + '<p/>');
                         }
                     },

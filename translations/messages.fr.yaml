@@ -30,24 +30,24 @@ adminMenu:
   logout: Se déconnecter
 
 event:
-  index: Liste des évènements
-  new: Ajout d'un évènement
+  index: Liste des événements
+  new: Ajout d'un événement
   title: Titre
   categories: Catégories
   content: Contenu
   created_at: Crée le
   image: Images
   actions: Actions
-  no_record: Pas d'évènements trouvés
+  no_record: Pas d'événements trouvés
   delete_image: Supprimer l'image
   location: Localisation
-  edit: Editer un évènement
-  delete: Supprimer un évènement
+  edit: Editer un événement
+  delete: Supprimer un événement
   show: Evènement
   success:
-    new: L'évènement "%title%" a bien été ajouté.
-    edit: L'évènement "%title%" a bien été modifié.
-    delete: L'évènement "%title%" a bien été supprimé.
+    new: L'événement "%title%" a bien été ajouté.
+    edit: L'événement "%title%" a bien été modifié.
+    delete: L'événement "%title%" a bien été supprimé.
 
 category:
   index: Liste des catégories
@@ -103,7 +103,7 @@ home:
   a_fete2: Tu cherches un bon plan pour le week-end ?
   a_fete3: Quelque soit ton style, tu es au bon endroit.
   a_fete4: Je te présente WildUnicorn !
-  a_fete5: WildUnicorn est un site qui regroupe tous les evénements musicaux du luxembourg.
+  a_fete5: WildUnicorn est un site qui regroupe tous les événements musicaux du luxembourg.
   a_concert: Je recherche un concert
   a_detail: Détail
 
