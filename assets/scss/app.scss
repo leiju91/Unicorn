@@ -176,7 +176,7 @@ nav.navbar{
     rgba(209, 0, 198, 1) 42%,
     rgba(182, 13, 216, 1) 66%,
     rgba(114, 0, 237, 1) 100%
-  );;
+  );
   border-color: rgba(255, 0, 255, 0.24);
   color: #e6e6e6;
 }
@@ -339,9 +339,18 @@ nav.navbar{
   margin-bottom: 0;
 }
 
-
+.btn-primary {
+  
+  background: linear-gradient(
+  45deg,
+  rgba(118, 6, 229, 1) 0%,
+  rgba(173, 12, 214, 1) 22%,
+  rgba(209, 0, 198, 1) 42%,
+  rgba(182, 13, 216, 1) 66%,
+  rgba(114, 0, 237, 1) 100%
+  );  
+}
 /* animation */
-
 .pulse {
     z-index: -2;
     position: absolute;
