@@ -14,7 +14,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request, TranslatorInterface $translator, \Swift_Mailer $mailer): Response
+    public function index(Request $request, \Swift_Mailer $mailer, TranslatorInterface $translator): Response
     {
         // dd($request->request->all());
         $form = $this->createForm(ContactType::class);
@@ -24,7 +24,7 @@ class ContactController extends AbstractController
             
         $contactFormData = $form->getData();
             // dd($contactFormData);
-
+            $this->addFlash("success", $translator->trans("msg.sent"));
             $message = (new \Swift_Message('You Got Mail!'))
                 ->setFrom($contactFormData['email'])
                 ->setTo("nepasrepondre@wildunicorn.com")
