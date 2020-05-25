@@ -81,6 +81,9 @@ form:
   title:
     category: Titre de la catégorie
 
+contact:
+  success: Votre message a bien été envoyé 
+
 save: Enregistrer
 delete: Supprimer
 back_to_list: De retour au listing
