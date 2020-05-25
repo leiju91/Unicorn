@@ -85,6 +85,9 @@ form:
   title:
     category: Category's title
 
+contact:
+  success: Your message has been sent 
+
 save: Save
 delete: Delete
 back_to_list: Back to list
