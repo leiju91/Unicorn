@@ -33,8 +33,8 @@ class ContactType extends AbstractType
                     'max' => 255,
                 ]),
             ],
-        ]);
-        // ->add('send', SubmitType::class, ['label' => 'Send']);
+        ])
+        ->add('send', SubmitType::class, ['label' => 'send']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
