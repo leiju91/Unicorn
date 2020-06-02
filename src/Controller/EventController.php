@@ -119,7 +119,6 @@ class EventController extends AbstractController
     public function delete(Request $request, Event $event, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
-            $this->render("event/show.html.twig");
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
