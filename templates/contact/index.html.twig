@@ -28,8 +28,11 @@
                 {'attr': {"class": "form-control", 'placeholder': 'user.contact_message'|trans}}) }}
             </div>
             <div class="form-group">
-                {{ form_widget(contactForm.send) }}
+                <button type="submit" class="form-button button-l margin-b">
+                {{"send"|trans}}
+            </button>
             </div>
+            
         {{ form_end(contactForm) }}
         </form>
     </div>
